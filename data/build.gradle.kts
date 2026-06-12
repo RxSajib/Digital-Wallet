@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.android.library)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -31,4 +32,14 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
 
     implementation(project(":domain"))
+
+    // retrofit android
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.okhttp)
+    implementation(libs.logging.interceptor)
+
+    // hilt android
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.android.compiler)
 }
