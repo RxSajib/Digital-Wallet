@@ -1,16 +1,37 @@
 package com.zenbyte.studio.digitalwallet.ui.screen
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import com.zenbyte.studio.digitalwallet.ui.component.AccountSettingGroup
+import com.zenbyte.studio.digitalwallet.ui.component.GeneralSettingGroup
+import com.zenbyte.studio.digitalwallet.ui.component.HeightSpace
+import com.zenbyte.studio.digitalwallet.ui.component.MyLogoutButton
 
 
 @Composable
 fun ProfileScreen() {
-    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
-        Text("Profile Screen")
+    Column(modifier = Modifier.fillMaxSize().background(
+        color = MaterialTheme.colorScheme.surface
+    ).padding(horizontal = 16.dp).verticalScroll(state = rememberScrollState())){
+
+        AccountSettingGroup(modifier = Modifier)
+        HeightSpace(height = 24.dp)
+        GeneralSettingGroup(modifier = Modifier)
+        HeightSpace(height = 30.dp)
+        MyLogoutButton(){
+
+        }
+        HeightSpace(height = 10.dp)
     }
 }
