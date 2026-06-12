@@ -1,6 +1,9 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.kotlinx.serialization)
+    alias(libs.plugins.kotlin.compose)
+    id("kotlin-parcelize")
 }
 
 android {
@@ -20,7 +23,9 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
-
+    buildFeatures {
+        compose = true
+    }
 }
 
 dependencies {
@@ -38,4 +43,16 @@ dependencies {
     // hilt android
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)
+
+    // compose
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.compose.ui)
+    implementation(libs.androidx.compose.material3)
+
+    // navigation
+    implementation(libs.navigation3.ui)
+    implementation(libs.jetbrains.lifecycle.viewmodelNavigation3)
+
+    // kotlinx serialization
+    implementation(libs.kotlin.serialization.json)
 }
