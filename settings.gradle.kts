@@ -24,3 +24,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "Digital Wallet"
 include(":app")
+include(":data")
+include(":domain")
+include(":presentation")

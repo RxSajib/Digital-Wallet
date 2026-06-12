@@ -1,4 +1,4 @@
-package com.zenbyte.studio.digitalwallet
+package com.zenbyte.studio.digitalwallet.root
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
