@@ -5,6 +5,8 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -12,6 +14,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.items
@@ -36,88 +39,121 @@ import com.zenbyte.studio.digitalwallet.ui.component.ServicesMoreButton
 import com.zenbyte.studio.presentation.viewmodel.home.HomeViewModel
 
 
+
 @Composable
 fun HomeScreen() {
     val viewModel: HomeViewModel = hiltViewModel<HomeViewModel>()
     val merchantList = viewModel.merchantList.collectAsStateWithLifecycle(emptyList())
     val servicesList = viewModel.servicesList.collectAsStateWithLifecycle(emptyList())
-    val bannerList = viewModel.bannerList.collectAsStateWithLifecycle()
+    val bannerList = viewModel.bannerList.collectAsStateWithLifecycle(emptyList())
     val contentCoil = LocalPlatformContext.current
     val bannerState = rememberBannerState()
 
-    Column(modifier = Modifier.fillMaxSize()) {
+    LazyVerticalGrid(
+        columns = GridCells.Fixed(4),
+        modifier = Modifier.fillMaxSize(),
+        contentPadding = PaddingValues(bottom = 24.dp),
+        verticalArrangement = Arrangement.spacedBy(10.dp),
+        horizontalArrangement = Arrangement.spacedBy(10.dp)
+    ) {
 
 
-        LazyVerticalGrid(
-            columns = GridCells.Fixed(4),
-            modifier = Modifier.fillMaxWidth(),
-            contentPadding = PaddingValues(16.dp),
-            verticalArrangement = Arrangement.spacedBy(10.dp),
-            horizontalArrangement = Arrangement.spacedBy(10.dp)
-        ) {
-            items(
-                items = servicesList.value,
-                key = { service -> service.id },
-                contentType = { service -> service.title }
-            ) { service ->
-                ServiceItem(service = service, context = contentCoil) { service ->
-                    // handle navigation or other operation
-                }
-            }
-            item {
-                ServicesMoreButton {
-                    // handle service more option
-                }
-            }
-
+        item(span = { GridItemSpan(maxLineSpan) }) {
+            HeightSpace(height = 6.dp)
         }
 
-        SectionHeader(
-            title = stringResource(R.string.today_promotion),
-            modifier = Modifier.padding(horizontal = 16.dp)
-        ) {
-
-        }
-        HeightSpace(height = 10.dp)
-        Banner(
-            pageCount = bannerList.value.size,
-            autoScrollTime = 5000L,
-            bannerState = bannerState,
-            orientation = Orientation.Horizontal,
-            bannerKey = { index -> bannerList.value[index].toString() }) {
-
-            BannerItem(
-                context = contentCoil,
-                banner = bannerList.value[index]
-            ) { banner ->
-                // handle banner item click event
+        items(
+            items = servicesList.value,
+            key = { service -> "service_${service.id}" },
+            contentType = { service -> service.title }
+        ) { service ->
+            ServiceItem(service = service, context = contentCoil) { clickedService ->
+                // handle navigation or other operation
             }
         }
 
-        HeightSpace(height = 10.dp)
-
-        SectionHeader(
-            title = stringResource(R.string.nearby_merchant),
-            modifier = Modifier.padding(horizontal = 16.dp)
-        ) {
-            // handle click event for view all button
+        item(key = "services_more_button") {
+            ServicesMoreButton {
+                // handle service more option
+            }
         }
-        HeightSpace(height = 10.dp)
-        LazyRow(
-            contentPadding = PaddingValues(horizontal = 16.dp),
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.spacedBy(10.dp)
+
+
+        item(
+            key = "promotion_section_header",
+            span = { GridItemSpan(maxLineSpan) }
         ) {
-            items(
-                merchantList.value,
-                key = { merchant -> merchant.id },
-                contentType = { merchant -> merchant.name }) { merchant ->
-                MerchantItem(merchant = merchant, context = contentCoil) {
-                    // handle click event
+            Column {
+                HeightSpace(height = 10.dp)
+                SectionHeader(
+                    title = stringResource(R.string.today_promotion),
+                    modifier = Modifier.padding(horizontal = 16.dp)
+                ) {}
+                HeightSpace(height = 10.dp)
+            }
+        }
+
+        item(
+            key = "promotion_banner_carousel",
+            span = { GridItemSpan(maxLineSpan) }
+        ) {
+            if (bannerList.value.isNotEmpty()) {
+                Banner(
+                    pageCount = bannerList.value.size,
+                    autoScrollTime = 5000L,
+                    bannerState = bannerState,
+                    orientation = Orientation.Horizontal,
+                    bannerKey = { index -> bannerList.value[index].toString() }
+                ) {
+                    BannerItem(
+                        context = contentCoil,
+                        banner = bannerList.value[index]
+                    ) { banner ->
+                        // handle banner item click event
+                    }
                 }
             }
         }
 
 
+        item(
+            key = "merchants_section_header",
+            span = { GridItemSpan(maxLineSpan) }
+        ) {
+            Column {
+                HeightSpace(height = 10.dp)
+                SectionHeader(
+                    title = stringResource(R.string.nearby_merchant),
+                    modifier = Modifier.padding(horizontal = 16.dp)
+                ) {
+                    // handle click event for view all button
+                }
+                HeightSpace(height = 10.dp)
+            }
+        }
+
+        item(
+            key = "merchants_horizontal_scroll",
+            span = { GridItemSpan(maxLineSpan) }
+        ) {
+            LazyRow(
+                contentPadding = PaddingValues(horizontal = 16.dp),
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(10.dp)
+            ) {
+                items(
+                    items = merchantList.value,
+                    key = { merchant -> "merchant_${merchant.id}" },
+                    contentType = { merchant -> merchant.name }
+                ) { merchant ->
+                    MerchantItem(merchant = merchant, context = contentCoil) {
+                        // handle click event
+                    }
+                }
+            }
+        }
     }
 }
+
+
+
