@@ -4,6 +4,7 @@ import com.zenbyte.studio.data.model.BannerDtoItem
 import com.zenbyte.studio.data.model.MerchantDto
 import com.zenbyte.studio.data.model.PaymentHistoryDto
 import com.zenbyte.studio.data.model.ServiceDtoItem
+import com.zenbyte.studio.data.model.UserDto
 
 interface DigitalWalletApi {
 
@@ -15,4 +16,6 @@ interface DigitalWalletApi {
     suspend fun getService() : List<ServiceDtoItem>
 
     suspend fun getBanner() : List<BannerDtoItem>
+
+    suspend fun getUserInfo() : UserDto
 }

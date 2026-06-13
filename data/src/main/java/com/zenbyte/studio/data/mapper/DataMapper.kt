@@ -4,10 +4,12 @@ import com.zenbyte.studio.data.model.BannerDtoItem
 import com.zenbyte.studio.data.model.MerchantDto
 import com.zenbyte.studio.data.model.PaymentHistoryDto
 import com.zenbyte.studio.data.model.ServiceDtoItem
+import com.zenbyte.studio.data.model.UserDto
 import com.zenbyte.studio.domain.model.Banner
 import com.zenbyte.studio.domain.model.Merchant
 import com.zenbyte.studio.domain.model.MyPaymentHistory
 import com.zenbyte.studio.domain.model.Service
+import com.zenbyte.studio.domain.model.User
 
 object DataMapper {
 
@@ -80,6 +82,18 @@ object DataMapper {
             bannerList.add(mapBannerDtoToBanner(it))
         }
         return bannerList
-
+    }
+    
+    fun mapUserDtoToUser(userDto: UserDto) : User {
+        return User(
+            userID = userDto.user_id,
+            userName = userDto.full_name,
+            balance = userDto.wallet.current_balance,
+            coinReward = userDto.wallet.coinReWard,
+            userEmailAddress = userDto.email,
+            userPhoneNumber = userDto.phone_number,
+            userProfilePicture = userDto.avatar_url,
+            isVerify = userDto.is_verified_account
+        )
     }
 }

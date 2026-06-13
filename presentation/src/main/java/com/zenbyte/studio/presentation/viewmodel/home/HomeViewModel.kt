@@ -8,6 +8,7 @@ import com.zenbyte.studio.domain.model.Service
 import com.zenbyte.studio.domain.usecase.BannerListUseCase
 import com.zenbyte.studio.domain.usecase.MerchantListUseCase
 import com.zenbyte.studio.domain.usecase.ServicesUseCase
+import com.zenbyte.studio.domain.usecase.UserUseCase
 import com.zenbyte.studio.presentation.utils.MyCustomLogger
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -20,9 +21,9 @@ import javax.inject.Inject
 private const val TAG = "HomeViewModel"
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    val merchantListUseCase: MerchantListUseCase,
-    val servicesUseCase: ServicesUseCase,
-    val bannerListUseCase: BannerListUseCase
+    private val merchantListUseCase: MerchantListUseCase,
+    private val servicesUseCase: ServicesUseCase,
+    private val bannerListUseCase: BannerListUseCase,
 ) : ViewModel() {
 
     private val _merchantList = MutableStateFlow<List<Merchant>>(emptyList())
@@ -43,6 +44,8 @@ class HomeViewModel @Inject constructor(
         getServices()
         getBannerList()
     }
+
+
 
     fun getBannerList(){
         viewModelScope.launch {

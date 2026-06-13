@@ -5,10 +5,12 @@ import com.zenbyte.studio.data.datasources.bannerResponse
 import com.zenbyte.studio.data.datasources.merchantData
 import com.zenbyte.studio.data.datasources.paymentHistoryResponse
 import com.zenbyte.studio.data.datasources.serviceResponse
+import com.zenbyte.studio.data.datasources.user
 import com.zenbyte.studio.data.model.BannerDtoItem
 import com.zenbyte.studio.data.model.MerchantDto
 import com.zenbyte.studio.data.model.PaymentHistoryDto
 import com.zenbyte.studio.data.model.ServiceDtoItem
+import com.zenbyte.studio.data.model.UserDto
 import com.zenbyte.studio.data.repoimpl.DigitalWalletRepoImpl
 import com.zenbyte.studio.domain.repository.MyDigitalWalletRepo
 import dagger.Module
@@ -45,6 +47,10 @@ object DigitalWalletRepoDi {
 
             override suspend fun getBanner(): List<BannerDtoItem> {
                 return bannerResponse
+            }
+
+            override suspend fun getUserInfo(): UserDto {
+                return user
             }
         }
     }

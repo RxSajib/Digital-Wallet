@@ -1,6 +1,7 @@
 package com.zenbyte.studio.digitalwallet.ui.component
 
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -32,9 +33,11 @@ import com.zenbyte.studio.digitalwallet.ui.theme.colorPrimaryLight
 import com.zenbyte.studio.domain.model.MyPaymentHistory
 
 @Composable
-fun TransactionHistoryItem(myPaymentHistory: MyPaymentHistory, context: PlatformContext) {
+fun TransactionHistoryItem(myPaymentHistory: MyPaymentHistory, context: PlatformContext, onClickTransactionHistory : (MyPaymentHistory) -> Unit) {
     Card(
-        modifier = Modifier.fillMaxWidth(), elevation = CardDefaults.cardElevation(2.dp),
+        modifier = Modifier.fillMaxWidth().clickable{
+            onClickTransactionHistory.invoke(myPaymentHistory)
+        }, elevation = CardDefaults.cardElevation(2.dp),
         shape = RoundedCornerShape(4.dp),
         border = BorderStroke(width = 1.dp, color = MaterialTheme.colorScheme.primary.copy(alpha = 0.1f)),
         colors = CardDefaults.cardColors(
@@ -131,5 +134,5 @@ fun TransactionHistoryItemPreview() {
             icon_url = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Send_icon.svg/3840px-Send_icon.svg.png",
             paymentType = "debit"
         )
-    )
+    ){}
 }

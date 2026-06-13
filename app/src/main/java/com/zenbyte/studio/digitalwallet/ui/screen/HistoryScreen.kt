@@ -35,7 +35,9 @@ fun HistoryScreen() {
             TransactionHistoryItem(
                 context = contextCoil,
                 myPaymentHistory = transactionHistory
-            )
+            ){history ->
+                // handle click event there
+            }
         }
     }
 }

@@ -2,8 +2,11 @@ package com.zenbyte.studio.data.datasources
 
 import com.zenbyte.studio.data.model.BannerDtoItem
 import com.zenbyte.studio.data.model.MerchantDto
+import com.zenbyte.studio.data.model.Metadata
 import com.zenbyte.studio.data.model.PaymentHistoryDto
 import com.zenbyte.studio.data.model.ServiceDtoItem
+import com.zenbyte.studio.data.model.UserDto
+import com.zenbyte.studio.data.model.Wallet
 
 val paymentHistoryResponse = listOf(
     PaymentHistoryDto(
@@ -544,5 +547,28 @@ val bannerResponse = listOf(
         is_active = true,
         start_date = "2026-06-10T00:00:00Z",
         end_date = "2026-06-17T23:59:59Z"
+    )
+)
+
+val user = UserDto(
+    user_id = 1024,
+    first_name = "ARIEF",
+    last_name = "WAHDAN ALFHAT",
+    full_name = "ARIEF WAHDAN ALFHAT",
+    email = "wahdanalfhat@gmail.com",
+    phone_number = "081221447884",
+    avatar_url = "https://api.mockdomain.com/users/avatars/arief_wahdan.png",
+    is_verified_account = true,
+    account_status = "VERIFIED",
+    wallet = Wallet(
+        currency_code = "BDT",
+        currency_symbol = "৳",
+        current_balance = 385.00,
+        points_balance = 1250,
+        coinReWard = 25.50
+    ),
+    metadata = Metadata(
+        created_at = "2026-02-15T09:41:00Z",
+        updated_at = "2026-06-13T16:12:00Z"
     )
 )
