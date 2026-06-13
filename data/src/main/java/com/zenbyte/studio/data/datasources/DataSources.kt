@@ -14,7 +14,7 @@ val paymentHistoryResponse = listOf(
         currencySymbol = "৳",
         type = "CREDIT",
         status = "SUCCESS",
-        iconUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Send_icon.svg/3840px-Send_icon.svg.png"
+        iconUrl = "https://static.vecteezy.com/system/resources/previews/036/885/312/non_2x/blue-send-icon-free-png.png"
     ),
     PaymentHistoryDto(
         id = 2,
@@ -27,7 +27,7 @@ val paymentHistoryResponse = listOf(
         currencySymbol = "৳",
         type = "DEBIT",
         status = "SUCCESS",
-        iconUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Send_icon.svg/3840px-Send_icon.svg.png"
+        iconUrl = "https://e7.pngegg.com/pngimages/896/350/png-clipart-computer-icons-check-mark-others-miscellaneous-angle.png"
     ),
     PaymentHistoryDto(
         id = 3,
@@ -40,7 +40,7 @@ val paymentHistoryResponse = listOf(
         currencySymbol = "৳",
         type = "DEBIT",
         status = "SUCCESS",
-        iconUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Send_icon.svg/3840px-Send_icon.svg.png"
+        iconUrl = "https://e7.pngegg.com/pngimages/896/350/png-clipart-computer-icons-check-mark-others-miscellaneous-angle.png"
     ),
     PaymentHistoryDto(
         id = 4,
@@ -53,7 +53,7 @@ val paymentHistoryResponse = listOf(
         currencySymbol = "৳",
         type = "DEBIT",
         status = "SUCCESS",
-        iconUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Send_icon.svg/3840px-Send_icon.svg.png"
+        iconUrl = "https://e7.pngegg.com/pngimages/896/350/png-clipart-computer-icons-check-mark-others-miscellaneous-angle.png"
     ),
     PaymentHistoryDto(
         id = 5,
@@ -66,7 +66,7 @@ val paymentHistoryResponse = listOf(
         currencySymbol = "৳",
         type = "DEBIT",
         status = "SUCCESS",
-        iconUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Send_icon.svg/3840px-Send_icon.svg.png"
+        iconUrl = "https://e7.pngegg.com/pngimages/896/350/png-clipart-computer-icons-check-mark-others-miscellaneous-angle.png"
     ),
     PaymentHistoryDto(
         id = 6,
@@ -79,7 +79,7 @@ val paymentHistoryResponse = listOf(
         currencySymbol = "৳",
         type = "CREDIT",
         status = "SUCCESS",
-        iconUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Send_icon.svg/3840px-Send_icon.svg.png"
+        iconUrl = "https://static.vecteezy.com/system/resources/previews/036/885/312/non_2x/blue-send-icon-free-png.png"
     ),
     PaymentHistoryDto(
         id = 7,
@@ -92,7 +92,7 @@ val paymentHistoryResponse = listOf(
         currencySymbol = "৳",
         type = "DEBIT",
         status = "SUCCESS",
-        iconUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Send_icon.svg/3840px-Send_icon.svg.png"
+        iconUrl = "https://e7.pngegg.com/pngimages/896/350/png-clipart-computer-icons-check-mark-others-miscellaneous-angle.png"
     ),
     PaymentHistoryDto(
         id = 8,
@@ -105,7 +105,7 @@ val paymentHistoryResponse = listOf(
         currencySymbol = "৳",
         type = "CREDIT",
         status = "SUCCESS",
-        iconUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Send_icon.svg/3840px-Send_icon.svg.png"
+        iconUrl = "https://static.vecteezy.com/system/resources/previews/036/885/312/non_2x/blue-send-icon-free-png.png"
     ),
     PaymentHistoryDto(
         id = 9,
@@ -118,7 +118,7 @@ val paymentHistoryResponse = listOf(
         currencySymbol = "৳",
         type = "DEBIT",
         status = "SUCCESS",
-        iconUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Send_icon.svg/3840px-Send_icon.svg.png"
+        iconUrl = "https://e7.pngegg.com/pngimages/896/350/png-clipart-computer-icons-check-mark-others-miscellaneous-angle.png"
     ),
     PaymentHistoryDto(
         id = 10,
@@ -131,7 +131,7 @@ val paymentHistoryResponse = listOf(
         currencySymbol = "৳",
         type = "DEBIT",
         status = "SUCCESS",
-        iconUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Send_icon.svg/3840px-Send_icon.svg.png"
+        iconUrl = "https://e7.pngegg.com/pngimages/896/350/png-clipart-computer-icons-check-mark-others-miscellaneous-angle.png"
     ),
     PaymentHistoryDto(
         id = 11,
@@ -144,7 +144,7 @@ val paymentHistoryResponse = listOf(
         currencySymbol = "৳",
         type = "DEBIT",
         status = "SUCCESS",
-        iconUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Send_icon.svg/3840px-Send_icon.svg.png"
+        iconUrl = "https://e7.pngegg.com/pngimages/896/350/png-clipart-computer-icons-check-mark-others-miscellaneous-angle.png"
     ),
     PaymentHistoryDto(
         id = 12,
@@ -157,7 +157,7 @@ val paymentHistoryResponse = listOf(
         currencySymbol = "৳",
         type = "DEBIT",
         status = "SUCCESS",
-        iconUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Send_icon.svg/3840px-Send_icon.svg.png"
+        iconUrl = "https://e7.pngegg.com/pngimages/896/350/png-clipart-computer-icons-check-mark-others-miscellaneous-angle.png"
     ),
     PaymentHistoryDto(
         id = 13,
@@ -170,7 +170,7 @@ val paymentHistoryResponse = listOf(
         currencySymbol = "৳",
         type = "DEBIT",
         status = "SUCCESS",
-        iconUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Send_icon.svg/3840px-Send_icon.svg.png"
+        iconUrl = "https://e7.pngegg.com/pngimages/896/350/png-clipart-computer-icons-check-mark-others-miscellaneous-angle.png"
     ),
     PaymentHistoryDto(
         id = 14,
@@ -183,7 +183,7 @@ val paymentHistoryResponse = listOf(
         currencySymbol = "৳",
         type = "CREDIT",
         status = "SUCCESS",
-        iconUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Send_icon.svg/3840px-Send_icon.svg.png"
+        iconUrl = "https://static.vecteezy.com/system/resources/previews/036/885/312/non_2x/blue-send-icon-free-png.png"
     ),
     PaymentHistoryDto(
         id = 15,
@@ -196,7 +196,7 @@ val paymentHistoryResponse = listOf(
         currencySymbol = "৳",
         type = "DEBIT",
         status = "SUCCESS",
-        iconUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Send_icon.svg/3840px-Send_icon.svg.png"
+        iconUrl = "https://e7.pngegg.com/pngimages/896/350/png-clipart-computer-icons-check-mark-others-miscellaneous-angle.png"
     ),
     PaymentHistoryDto(
         id = 16,
@@ -209,7 +209,7 @@ val paymentHistoryResponse = listOf(
         currencySymbol = "৳",
         type = "DEBIT",
         status = "SUCCESS",
-        iconUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Send_icon.svg/3840px-Send_icon.svg.png"
+        iconUrl = "https://e7.pngegg.com/pngimages/896/350/png-clipart-computer-icons-check-mark-others-miscellaneous-angle.png"
     ),
     PaymentHistoryDto(
         id = 17,
@@ -222,7 +222,7 @@ val paymentHistoryResponse = listOf(
         currencySymbol = "৳",
         type = "DEBIT",
         status = "SUCCESS",
-        iconUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Send_icon.svg/3840px-Send_icon.svg.png"
+        iconUrl = "https://e7.pngegg.com/pngimages/896/350/png-clipart-computer-icons-check-mark-others-miscellaneous-angle.png"
     ),
     PaymentHistoryDto(
         id = 18,
@@ -235,7 +235,7 @@ val paymentHistoryResponse = listOf(
         currencySymbol = "৳",
         type = "DEBIT",
         status = "SUCCESS",
-        iconUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Send_icon.svg/3840px-Send_icon.svg.png"
+        iconUrl = "https://e7.pngegg.com/pngimages/896/350/png-clipart-computer-icons-check-mark-others-miscellaneous-angle.png"
     ),
     PaymentHistoryDto(
         id = 19,
@@ -248,7 +248,7 @@ val paymentHistoryResponse = listOf(
         currencySymbol = "৳",
         type = "DEBIT",
         status = "SUCCESS",
-        iconUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Send_icon.svg/3840px-Send_icon.svg.png"
+        iconUrl = "https://e7.pngegg.com/pngimages/896/350/png-clipart-computer-icons-check-mark-others-miscellaneous-angle.png"
     ),
     PaymentHistoryDto(
         id = 20,
@@ -261,6 +261,6 @@ val paymentHistoryResponse = listOf(
         currencySymbol = "৳",
         type = "CREDIT",
         status = "SUCCESS",
-        iconUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Send_icon.svg/3840px-Send_icon.svg.png"
+        iconUrl = "https://static.vecteezy.com/system/resources/previews/036/885/312/non_2x/blue-send-icon-free-png.png"
     )
 )
