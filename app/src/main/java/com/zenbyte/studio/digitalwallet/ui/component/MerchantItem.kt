@@ -96,7 +96,7 @@ fun MerchantItem(merchant: Merchant, context: PlatformContext) {
 
             HeightSpace(height = 2.dp)
             HorizontalDivider()
-            HeightSpace(height = 8.dp)
+            HeightSpace(height = 10.dp)
             Text(
                 text = merchant.name,
                 style = MaterialTheme.typography.bodySmall.copy(
@@ -107,7 +107,7 @@ fun MerchantItem(merchant: Merchant, context: PlatformContext) {
                 overflow = TextOverflow.Ellipsis,
                 textAlign = TextAlign.Center
             )
-
+HeightSpace(height = 5.dp)
             Text(
                 text = merchant.category,
                 style = MaterialTheme.typography.bodySmall.copy(

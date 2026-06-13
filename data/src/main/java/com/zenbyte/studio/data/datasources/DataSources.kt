@@ -274,7 +274,7 @@ val merchantData = listOf(
         distance_km = 1.2,
         display_distance = "1.2 km",
         rating = 4.8,
-        logo_url = "https://api.mockdomain.com/logos/kfc.png",
+        logo_url = "https://download.logo.wine/logo/KFC/KFC-Logo.wine.png",
         created_at = "2026-01-15T08:30:00Z",
         updated_at = "2026-06-10T14:22:18Z"
     ),
@@ -285,7 +285,7 @@ val merchantData = listOf(
         distance_km = 1.2,
         display_distance = "1.2 km",
         rating = 4.8,
-        logo_url = "https://api.mockdomain.com/logos/burger_king.png",
+        logo_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-2Dmh4H4a_Eq7xfpqWT4ulKhoZF9C83PfHQ&s",
         created_at = "2026-01-15T09:15:00Z",
         updated_at = "2026-06-12T11:05:42Z"
     ),
@@ -296,7 +296,7 @@ val merchantData = listOf(
         distance_km = 1.2,
         display_distance = "1.2 km",
         rating = 4.8,
-        logo_url = "https://api.mockdomain.com/logos/pizza_hut.png",
+        logo_url = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Pizza_hut_logo_international.svg/1280px-Pizza_hut_logo_international.svg.png",
         created_at = "2026-01-16T10:00:00Z",
         updated_at = "2026-06-11T09:45:12Z"
     ),
@@ -307,7 +307,7 @@ val merchantData = listOf(
         distance_km = 1.5,
         display_distance = "1.5 km",
         rating = 4.6,
-        logo_url = "https://api.mockdomain.com/logos/mcdonalds.png",
+        logo_url = "https://images.seeklogo.com/logo-png/37/1/mcdonalds-logo-png_seeklogo-370359.png",
         created_at = "2026-01-20T14:35:00Z",
         updated_at = "2026-05-28T16:18:00Z"
     ),
@@ -318,7 +318,7 @@ val merchantData = listOf(
         distance_km = 0.8,
         display_distance = "0.8 km",
         rating = 4.7,
-        logo_url = "https://api.mockdomain.com/logos/dominos.png",
+        logo_url = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Dominos_pizza_logo.svg/3840px-Dominos_pizza_logo.svg.png",
         created_at = "2026-01-22T11:20:00Z",
         updated_at = "2026-06-13T10:00:00Z"
     ),
@@ -329,7 +329,7 @@ val merchantData = listOf(
         distance_km = 2.1,
         display_distance = "2.1 km",
         rating = 4.3,
-        logo_url = "https://api.mockdomain.com/logos/subway.png",
+        logo_url = "https://rabbitlogo.com/wp-content/uploads/2025/12/subway.jpg",
         created_at = "2026-02-02T07:45:00Z",
         updated_at = "2026-06-01T13:14:22Z"
     ),
@@ -340,7 +340,7 @@ val merchantData = listOf(
         distance_km = 1.1,
         display_distance = "1.1 km",
         rating = 4.9,
-        logo_url = "https://api.mockdomain.com/logos/chillox.png",
+        logo_url = "https://images.seeklogo.com/logo-png/64/1/chillox-logo-png_seeklogo-647089.png",
         created_at = "2026-02-10T16:00:00Z",
         updated_at = "2026-06-12T22:40:11Z"
     ),
@@ -351,7 +351,7 @@ val merchantData = listOf(
         distance_km = 1.4,
         display_distance = "1.4 km",
         rating = 4.7,
-        logo_url = "https://api.mockdomain.com/logos/takeout.png",
+        logo_url = "https://images.deliveryhero.io/image/fd-bd/bd-logos/ca3ho-logo.jpg",
         created_at = "2026-02-12T12:10:00Z",
         updated_at = "2026-06-09T17:55:00Z"
     ),
@@ -362,7 +362,7 @@ val merchantData = listOf(
         distance_km = 2.5,
         display_distance = "2.5 km",
         rating = 4.2,
-        logo_url = "https://api.mockdomain.com/logos/bfc.png",
+        logo_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU-YXcx5Ch5JLyaiq3yCSD_3T__dy345tFzA&s",
         created_at = "2026-02-18T09:30:00Z",
         updated_at = "2026-04-20T11:12:34Z"
     ),
@@ -373,7 +373,7 @@ val merchantData = listOf(
         distance_km = 1.7,
         display_distance = "1.7 km",
         rating = 4.6,
-        logo_url = "https://api.mockdomain.com/logos/madchef.png",
+        logo_url = "https://images.deliveryhero.io/image/fd-bd/bd-logos/ce2hc-logo.jpg",
         created_at = "2026-03-01T15:20:00Z",
         updated_at = "2026-06-11T14:30:22Z"
     ),
@@ -384,7 +384,7 @@ val merchantData = listOf(
         distance_km = 3.0,
         display_distance = "3.0 km",
         rating = 4.5,
-        logo_url = "https://api.mockdomain.com/logos/secret_recipe.png",
+        logo_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTv_ifX2uyWaZ4wU4LYWNfsWewjnH2o400OWg&s",
         created_at = "2026-03-05T11:00:00Z",
         updated_at = "2026-06-05T09:20:15Z"
     ),
@@ -395,7 +395,7 @@ val merchantData = listOf(
         distance_km = 0.5,
         display_distance = "0.5 km",
         rating = 4.4,
-        logo_url = "https://api.mockdomain.com/logos/cp.png",
+        logo_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAROfHGeE9v752LisKINpTRvJQckxuVGWkFQ&s",
         created_at = "2026-03-14T08:15:00Z",
         updated_at = "2026-06-13T06:45:00Z"
     ),
@@ -406,7 +406,7 @@ val merchantData = listOf(
         distance_km = 2.2,
         display_distance = "2.2 km",
         rating = 4.9,
-        logo_url = "https://api.mockdomain.com/logos/sultans_dine.png",
+        logo_url = "https://play-lh.googleusercontent.com/8cYViwMN71bYulS1SICTlPgDwhNvx8mRMIaG-YHX1Upt9X6GjHE3IZskL9NkILaOS_sLQoklDgkwL2LHTeag",
         created_at = "2026-03-22T10:40:00Z",
         updated_at = "2026-06-12T19:30:55Z"
     ),
@@ -417,7 +417,7 @@ val merchantData = listOf(
         distance_km = 1.9,
         display_distance = "1.9 km",
         rating = 4.8,
-        logo_url = "https://api.mockdomain.com/logos/kacchi_bhai.png",
+        logo_url = "https://cdn.prod.website-files.com/63de61fd6af00b31333c0d3a/63f0729263ea2212dc19bb79_logo-4-removebg-p-500.webp",
         created_at = "2026-04-02T11:50:00Z",
         updated_at = "2026-06-12T21:15:40Z"
     ),
@@ -428,7 +428,7 @@ val merchantData = listOf(
         distance_km = 2.8,
         display_distance = "2.8 km",
         rating = 4.7,
-        logo_url = "https://api.mockdomain.com/logos/star_kabab.png",
+        logo_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQ1GQLIVt9Lt9W5pszl2rl5pkcprIPX1Wklw&s",
         created_at = "2026-04-10T06:00:00Z",
         updated_at = "2026-06-10T12:00:00Z"
     )

@@ -14,21 +14,7 @@ import javax.inject.Inject
 private const val TAG = "MerchantViewModel"
 @HiltViewModel
 class MerchantViewModel @Inject constructor(
-    val merchantListUseCase: MerchantListUseCase
 ) : ViewModel() {
 
-    private val _merchantList = MutableStateFlow<List<Merchant>>(emptyList())
-    val merchantList = _merchantList.asStateFlow()
 
-    init {
-        getMerchantList()
-    }
-
-    fun getMerchantList() {
-        viewModelScope.launch {
-            val response = merchantListUseCase.getMerchantList()
-            _merchantList.emit(response)
-            MyCustomLogger.logMessageInfo(tag = TAG, message = response.toString())
-        }
-    }
 }
