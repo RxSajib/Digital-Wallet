@@ -1,5 +1,6 @@
 package com.zenbyte.studio.data.datasources
 
+import com.zenbyte.studio.data.model.BannerDtoItem
 import com.zenbyte.studio.data.model.MerchantDto
 import com.zenbyte.studio.data.model.PaymentHistoryDto
 import com.zenbyte.studio.data.model.ServiceDtoItem
@@ -498,5 +499,50 @@ val serviceResponse = listOf(
         is_active = true,
         created_at = "2026-02-01T11:30:00Z",
         updated_at = "2026-06-13T09:12:05Z"
+    )
+)
+
+val bannerResponse = listOf(
+    BannerDtoItem(
+        id = 1,
+        title = "Big Sale",
+        subtitle = "Limited Time Offer",
+        badge_text = "BEST DEAL",
+        discount_percentage = 45,
+        display_discount = "UP TO 45% OFF",
+        banner_image_url = "https://api.mockdomain.com/promotions/banners/big_sale_45.png",
+        redirect_type = "merchant_list",
+        target_id = "campaign_mega_sale_01",
+        is_active = true,
+        start_date = "2026-06-01T00:00:00Z",
+        end_date = "2026-06-20T23:59:59Z"
+    ),
+    BannerDtoItem(
+        id = 2,
+        title = "Friday Feast",
+        subtitle = "Weekend Special BOGO",
+        badge_text = "1 FOR 1",
+        discount_percentage = 50,
+        display_discount = "BUY 1 GET 1 FREE",
+        banner_image_url = "https://api.mockdomain.com/promotions/banners/friday_feast_bogo.png",
+        redirect_type = "category_filter",
+        target_id = "fast_food",
+        is_active = true,
+        start_date = "2026-06-12T00:00:00Z",
+        end_date = "2026-06-14T23:59:59Z"
+    ),
+    BannerDtoItem(
+        id = 3,
+        title = "Free Delivery Week",
+        subtitle = "On orders over ৳500",
+        badge_text = "FREE SHIPPING",
+        discount_percentage = 100,
+        display_discount = "0 Taka Delivery Fee",
+        banner_image_url = "https://api.mockdomain.com/promotions/banners/free_delivery.png",
+        redirect_type = "url",
+        target_id = "https://api.mockdomain.com/webviews/terms-free-delivery",
+        is_active = true,
+        start_date = "2026-06-10T00:00:00Z",
+        end_date = "2026-06-17T23:59:59Z"
     )
 )

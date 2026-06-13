@@ -1,9 +1,11 @@
 package com.zenbyte.studio.data.di
 
 import com.zenbyte.studio.data.api.DigitalWalletApi
+import com.zenbyte.studio.data.datasources.bannerResponse
 import com.zenbyte.studio.data.datasources.merchantData
 import com.zenbyte.studio.data.datasources.paymentHistoryResponse
 import com.zenbyte.studio.data.datasources.serviceResponse
+import com.zenbyte.studio.data.model.BannerDtoItem
 import com.zenbyte.studio.data.model.MerchantDto
 import com.zenbyte.studio.data.model.PaymentHistoryDto
 import com.zenbyte.studio.data.model.ServiceDtoItem
@@ -39,6 +41,10 @@ object DigitalWalletRepoDi {
 
             override suspend fun getService(): List<ServiceDtoItem> {
                 return serviceResponse
+            }
+
+            override suspend fun getBanner(): List<BannerDtoItem> {
+                return bannerResponse
             }
         }
     }

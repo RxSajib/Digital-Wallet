@@ -49,9 +49,10 @@ fun HomeScreen() {
         ) {
             items(
                 items = servicesList.value,
-                key = { service -> service.id }
+                key = { service -> service.id },
+                contentType = { service -> service.title }
             ) { service ->
-                ServiceItem(service = service, context = contentCoil){service ->
+                ServiceItem(service = service, context = contentCoil) { service ->
                     // handle navigation or other operation
                 }
             }
@@ -73,7 +74,10 @@ fun HomeScreen() {
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.spacedBy(10.dp)
         ) {
-            items(merchantList.value) { merchant ->
+            items(
+                merchantList.value,
+                key = { merchant -> merchant.id },
+                contentType = { merchant -> merchant.name }) { merchant ->
                 MerchantItem(merchant = merchant, context = contentCoil)
             }
         }

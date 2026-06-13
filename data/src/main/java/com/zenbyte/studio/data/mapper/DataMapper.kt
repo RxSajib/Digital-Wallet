@@ -1,8 +1,10 @@
 package com.zenbyte.studio.data.mapper
 
+import com.zenbyte.studio.data.model.BannerDtoItem
 import com.zenbyte.studio.data.model.MerchantDto
 import com.zenbyte.studio.data.model.PaymentHistoryDto
 import com.zenbyte.studio.data.model.ServiceDtoItem
+import com.zenbyte.studio.domain.model.Banner
 import com.zenbyte.studio.domain.model.Merchant
 import com.zenbyte.studio.domain.model.MyPaymentHistory
 import com.zenbyte.studio.domain.model.Service
@@ -63,5 +65,21 @@ object DataMapper {
             serviceList.add(mapServiceDtoToService(it))
         }
         return serviceList
+    }
+
+    fun mapBannerDtoToBanner(bannerDto: BannerDtoItem) : Banner{
+        return Banner(
+            bannerImage = bannerDto.banner_image_url,
+            id = bannerDto.id
+        )
+    }
+
+    fun mapBannerDtoListToBannerList(bannerDtoList: List<BannerDtoItem>) : List<Banner>{
+        val bannerList = mutableListOf<Banner>()
+        bannerDtoList.forEach {
+            bannerList.add(mapBannerDtoToBanner(it))
+        }
+        return bannerList
+
     }
 }

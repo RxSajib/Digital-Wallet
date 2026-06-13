@@ -1,12 +1,15 @@
 package com.zenbyte.studio.data.repoimpl
 
 import com.zenbyte.studio.data.api.DigitalWalletApi
+import com.zenbyte.studio.data.datasources.bannerResponse
 import com.zenbyte.studio.data.datasources.merchantData
 import com.zenbyte.studio.data.datasources.serviceResponse
+import com.zenbyte.studio.data.mapper.DataMapper.mapBannerDtoListToBannerList
 import com.zenbyte.studio.data.mapper.DataMapper.mapMerchantDtoListToMyMerchantList
 import com.zenbyte.studio.data.mapper.DataMapper.mapPaymentHistoryDtoListToMyPaymentHistoryList
 import com.zenbyte.studio.data.mapper.DataMapper.mapServiceDtoListToServiceList
 import com.zenbyte.studio.data.utils.MyCustomLogger
+import com.zenbyte.studio.domain.model.Banner
 import com.zenbyte.studio.domain.model.Merchant
 import com.zenbyte.studio.domain.model.MyPaymentHistory
 import com.zenbyte.studio.domain.model.Service
@@ -32,5 +35,11 @@ class DigitalWalletRepoImpl @Inject constructor(val digitalWalletApi: DigitalWal
         val response = digitalWalletApi.getService()
         // for example api call success
         return mapServiceDtoListToServiceList(serviceDtoList = serviceResponse)
+    }
+
+    override suspend fun getBanner(): List<Banner> {
+        val banner = digitalWalletApi.getBanner()
+        // for example api call success
+        return mapBannerDtoListToBannerList(bannerResponse)
     }
 }

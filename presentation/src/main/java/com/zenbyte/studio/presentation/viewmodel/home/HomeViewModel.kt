@@ -2,8 +2,10 @@ package com.zenbyte.studio.presentation.viewmodel.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.zenbyte.studio.domain.model.Banner
 import com.zenbyte.studio.domain.model.Merchant
 import com.zenbyte.studio.domain.model.Service
+import com.zenbyte.studio.domain.usecase.BannerListUseCase
 import com.zenbyte.studio.domain.usecase.MerchantListUseCase
 import com.zenbyte.studio.domain.usecase.ServicesUseCase
 import com.zenbyte.studio.presentation.utils.MyCustomLogger
@@ -19,7 +21,8 @@ private const val TAG = "HomeViewModel"
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     val merchantListUseCase: MerchantListUseCase,
-    val servicesUseCase: ServicesUseCase
+    val servicesUseCase: ServicesUseCase,
+    val bannerListUseCase: BannerListUseCase
 ) : ViewModel() {
 
     private val _merchantList = MutableStateFlow<List<Merchant>>(emptyList())
@@ -31,10 +34,22 @@ class HomeViewModel @Inject constructor(
     private val _servicesList = MutableStateFlow<List<Service>>(emptyList())
     val servicesList = _servicesList.asStateFlow().take(6)
 
+    private var _bannerList = MutableStateFlow<List<Banner>>(emptyList())
+    val bannerList = _bannerList.asStateFlow()
+
 
     init {
         getMerchantList()
         getServices()
+        getBannerList()
+    }
+
+    fun getBannerList(){
+        viewModelScope.launch {
+            val response = bannerListUseCase.getBannerList()
+            _bannerList.emit(response)
+            MyCustomLogger.logMessageInfo(tag = TAG, message = response.toString())
+        }
     }
 
     fun getServices() {
@@ -49,7 +64,7 @@ class HomeViewModel @Inject constructor(
         viewModelScope.launch {
             val response = merchantListUseCase.getMerchantList()
             _merchantList.emit(response)
-            MyCustomLogger.logMessageInfo(tag = TAG, message = response.toString())
+
         }
     }
 }
