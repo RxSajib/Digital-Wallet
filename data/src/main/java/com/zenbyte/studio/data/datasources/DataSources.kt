@@ -2,6 +2,7 @@ package com.zenbyte.studio.data.datasources
 
 import com.zenbyte.studio.data.model.MerchantDto
 import com.zenbyte.studio.data.model.PaymentHistoryDto
+import com.zenbyte.studio.data.model.ServiceDtoItem
 
 val paymentHistoryResponse = listOf(
     PaymentHistoryDto(
@@ -431,5 +432,80 @@ val merchantData = listOf(
         logo_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQ1GQLIVt9Lt9W5pszl2rl5pkcprIPX1Wklw&s",
         created_at = "2026-04-10T06:00:00Z",
         updated_at = "2026-06-10T12:00:00Z"
+    )
+)
+
+val serviceResponse = listOf(
+    ServiceDtoItem(
+        id = 1,
+        title = "Electricity",
+        slug = "electricity",
+        icon_url = "https://api.mockdomain.com/services/icons/electricity.png",
+        is_active = true,
+        created_at = "2026-01-10T06:00:00Z",
+        updated_at = "2026-06-12T10:30:00Z"
+    ),
+    ServiceDtoItem(
+        id = 2,
+        title = "Water Bill",
+        slug = "water_bill",
+        icon_url = "https://api.mockdomain.com/services/icons/water_bill.png",
+        is_active = true,
+        created_at = "2026-01-10T06:00:00Z",
+        updated_at = "2026-06-12T10:30:00Z"
+    ),
+    ServiceDtoItem(
+        id = 3,
+        title = "Phone Credit",
+        slug = "phone_credit",
+        icon_url = "https://api.mockdomain.com/services/icons/phone_credit.png",
+        is_active = true,
+        created_at = "2026-01-10T06:00:00Z",
+        updated_at = "2026-06-12T10:30:00Z"
+    ),
+    ServiceDtoItem(
+        id = 4,
+        title = "Internet",
+        slug = "internet",
+        icon_url = "https://api.mockdomain.com/services/icons/internet.png",
+        is_active = true,
+        created_at = "2026-01-12T08:15:00Z",
+        updated_at = "2026-06-11T14:22:18Z"
+    ),
+    ServiceDtoItem(
+        id = 5,
+        title = "E-Money",
+        slug = "e_money",
+        icon_url = "https://api.mockdomain.com/services/icons/e_money.png",
+        is_active = true,
+        created_at = "2026-01-12T08:15:00Z",
+        updated_at = "2026-06-11T14:22:18Z"
+    ),
+    ServiceDtoItem(
+        id = 6,
+        title = "G-Voucher",
+        slug = "g_voucher",
+        icon_url = "https://api.mockdomain.com/services/icons/g_voucher.png",
+        is_active = true,
+        created_at = "2026-01-15T09:00:00Z",
+        updated_at = "2026-06-05T11:45:12Z"
+    ),
+    ServiceDtoItem(
+        id = 7,
+        title = "Netflix",
+        slug = "netflix",
+        icon_url = "https://api.mockdomain.com/services/icons/netflix.png",
+        is_active = true,
+        created_at = "2026-02-01T11:30:00Z",
+        updated_at = "2026-06-13T09:12:05Z"
+    ),
+    ServiceDtoItem(
+        id = 8,
+        title = "More",
+        slug = "more_actions",
+        icon_url = "https://api.mockdomain.com/services/icons/more.png",
+        is_active = true,
+        created_at = "2026-01-10T06:00:00Z",
+        updated_at = "2026-01-10T06:00:00Z"
     )
 )

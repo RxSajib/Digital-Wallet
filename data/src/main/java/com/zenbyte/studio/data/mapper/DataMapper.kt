@@ -2,8 +2,10 @@ package com.zenbyte.studio.data.mapper
 
 import com.zenbyte.studio.data.model.MerchantDto
 import com.zenbyte.studio.data.model.PaymentHistoryDto
+import com.zenbyte.studio.data.model.ServiceDtoItem
 import com.zenbyte.studio.domain.model.Merchant
 import com.zenbyte.studio.domain.model.MyPaymentHistory
+import com.zenbyte.studio.domain.model.Service
 
 object DataMapper {
 
@@ -44,5 +46,22 @@ object DataMapper {
             myMerchantList.add(mapMerchantDtoToMyMerchant(it))
         }
         return myMerchantList
+    }
+
+
+    fun mapServiceDtoToService(serviceDto: ServiceDtoItem): Service {
+        return Service(
+            id = serviceDto.id,
+            title = serviceDto.title,
+            icon = serviceDto.icon_url
+        )
+    }
+
+    fun mapServiceDtoListToServiceList(serviceDtoList: List<ServiceDtoItem>) : List<Service>{
+        val serviceList = mutableListOf<Service>()
+        serviceDtoList.forEach {
+            serviceList.add(mapServiceDtoToService(it))
+        }
+        return serviceList
     }
 }

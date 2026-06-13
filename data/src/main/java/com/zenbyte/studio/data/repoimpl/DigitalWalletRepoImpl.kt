@@ -2,11 +2,14 @@ package com.zenbyte.studio.data.repoimpl
 
 import com.zenbyte.studio.data.api.DigitalWalletApi
 import com.zenbyte.studio.data.datasources.merchantData
+import com.zenbyte.studio.data.datasources.serviceResponse
 import com.zenbyte.studio.data.mapper.DataMapper.mapMerchantDtoListToMyMerchantList
 import com.zenbyte.studio.data.mapper.DataMapper.mapPaymentHistoryDtoListToMyPaymentHistoryList
+import com.zenbyte.studio.data.mapper.DataMapper.mapServiceDtoListToServiceList
 import com.zenbyte.studio.data.utils.MyCustomLogger
 import com.zenbyte.studio.domain.model.Merchant
 import com.zenbyte.studio.domain.model.MyPaymentHistory
+import com.zenbyte.studio.domain.model.Service
 import com.zenbyte.studio.domain.repository.MyDigitalWalletRepo
 import javax.inject.Inject
 
@@ -23,5 +26,11 @@ class DigitalWalletRepoImpl @Inject constructor(val digitalWalletApi: DigitalWal
         MyCustomLogger.logMessageInfo(tag = TAG, message = mapMerchantDtoListToMyMerchantList(merchantDtoList = merchantData).toString())
         // for example api call success
         return mapMerchantDtoListToMyMerchantList(merchantDtoList = merchantData)
+    }
+
+    override suspend fun getServices(): List<Service> {
+        val response = digitalWalletApi.getService()
+        // for example api call success
+        return mapServiceDtoListToServiceList(serviceDtoList = serviceResponse)
     }
 }
