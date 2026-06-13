@@ -1,10 +1,12 @@
 package com.zenbyte.studio.digitalwallet.ui.component
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
@@ -31,11 +33,14 @@ import com.zenbyte.studio.domain.model.MyPaymentHistory
 
 @Composable
 fun TransactionHistoryItem(myPaymentHistory: MyPaymentHistory, context: PlatformContext) {
-    Card(modifier = Modifier.fillMaxWidth(), elevation = CardDefaults.cardElevation(2.dp),
+    Card(
+        modifier = Modifier.fillMaxWidth(), elevation = CardDefaults.cardElevation(2.dp),
+        shape = RoundedCornerShape(4.dp),
+        border = BorderStroke(width = 1.dp, color = MaterialTheme.colorScheme.primary.copy(alpha = 0.1f)),
         colors = CardDefaults.cardColors(
             containerColor = MaterialTheme.colorScheme.surface
         )
-        ) {
+    ) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -91,7 +96,7 @@ fun TransactionHistoryItem(myPaymentHistory: MyPaymentHistory, context: Platform
                     text = myPaymentHistory.formattedPrice,
                     style = MaterialTheme.typography.bodyLarge.copy(
                         fontWeight = FontWeight.W600,
-                        color = if(!myPaymentHistory.isPaymentCredit) colorPrimaryLight else colorGreen
+                        color = if (!myPaymentHistory.isPaymentCredit) colorPrimaryLight else colorGreen
                     )
                 )
                 HeightSpace(height = 10.dp)

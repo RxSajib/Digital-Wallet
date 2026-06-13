@@ -1,5 +1,6 @@
 package com.zenbyte.studio.digitalwallet.ui.screen
 
+import androidx.compose.foundation.gestures.Orientation
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -7,6 +8,7 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.grid.GridCells
@@ -22,20 +24,26 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil3.compose.LocalPlatformContext
+import com.lt.compose_views.banner.Banner
+import com.lt.compose_views.banner.rememberBannerState
 import com.zenbyte.studio.digitalwallet.R
+import com.zenbyte.studio.digitalwallet.ui.component.BannerItem
 import com.zenbyte.studio.digitalwallet.ui.component.HeightSpace
 import com.zenbyte.studio.digitalwallet.ui.component.MerchantItem
 import com.zenbyte.studio.digitalwallet.ui.component.SectionHeader
 import com.zenbyte.studio.digitalwallet.ui.component.ServiceItem
+import com.zenbyte.studio.digitalwallet.ui.component.ServicesMoreButton
 import com.zenbyte.studio.presentation.viewmodel.home.HomeViewModel
-import com.zenbyte.studio.presentation.viewmodel.merchant.MerchantViewModel
+
 
 @Composable
 fun HomeScreen() {
     val viewModel: HomeViewModel = hiltViewModel<HomeViewModel>()
     val merchantList = viewModel.merchantList.collectAsStateWithLifecycle(emptyList())
     val servicesList = viewModel.servicesList.collectAsStateWithLifecycle(emptyList())
+    val bannerList = viewModel.bannerList.collectAsStateWithLifecycle()
     val contentCoil = LocalPlatformContext.current
+    val bannerState = rememberBannerState()
 
     Column(modifier = Modifier.fillMaxSize()) {
 
@@ -56,8 +64,34 @@ fun HomeScreen() {
                     // handle navigation or other operation
                 }
             }
+            item {
+                ServicesMoreButton {
+                    // handle service more option
+                }
+            }
 
+        }
 
+        SectionHeader(
+            title = stringResource(R.string.today_promotion),
+            modifier = Modifier.padding(horizontal = 16.dp)
+        ) {
+
+        }
+        HeightSpace(height = 10.dp)
+        Banner(
+            pageCount = bannerList.value.size,
+            autoScrollTime = 5000L,
+            bannerState = bannerState,
+            orientation = Orientation.Horizontal,
+            bannerKey = { index -> bannerList.value[index].toString() }) {
+
+            BannerItem(
+                context = contentCoil,
+                banner = bannerList.value[index]
+            ) { banner ->
+                // handle banner item click event
+            }
         }
 
         HeightSpace(height = 10.dp)
@@ -66,9 +100,9 @@ fun HomeScreen() {
             title = stringResource(R.string.nearby_merchant),
             modifier = Modifier.padding(horizontal = 16.dp)
         ) {
-
+            // handle click event for view all button
         }
-
+        HeightSpace(height = 10.dp)
         LazyRow(
             contentPadding = PaddingValues(horizontal = 16.dp),
             modifier = Modifier.fillMaxWidth(),
@@ -78,7 +112,9 @@ fun HomeScreen() {
                 merchantList.value,
                 key = { merchant -> merchant.id },
                 contentType = { merchant -> merchant.name }) { merchant ->
-                MerchantItem(merchant = merchant, context = contentCoil)
+                MerchantItem(merchant = merchant, context = contentCoil) {
+                    // handle click event
+                }
             }
         }
 

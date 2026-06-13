@@ -17,4 +17,6 @@
     <string name="logout">Logout</string>
     <string name="view_all">view all</string>
     <string name="nearby_merchant">Nearby Merchant</string>
+    <string name="today_promotion">Today’s Promotions</string>
+    <string name="more">More</string>
 </resources>

@@ -24,6 +24,7 @@ ksp = "2.3.9"
 navigationCompose = "1.0.0-alpha06"
 navigationViewModel = "2.10.0-alpha07"
 materialIconsExtended = "1.7.3"
+composeviews = "1.9.0.4"
 
 
 [libraries]
@@ -58,6 +59,7 @@ navigation3-ui = { module = "org.jetbrains.androidx.navigation3:navigation3-ui",
 jetbrains-lifecycle-viewmodelNavigation3 = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-navigation3", version.ref = "navigationViewModel" }
 androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycleRuntimeKtx" }
 material-icons-extended = { module = "org.jetbrains.compose.material:material-icons-extended", version.ref = "materialIconsExtended" }
+composeviews = { module = "io.github.ltttttttttttt:ComposeViews", version.ref = "composeviews" }
 
 
 [plugins]

@@ -85,4 +85,7 @@ dependencies {
 
     // icon ectended
     implementation(libs.material.icons.extended)
+
+    //banner
+    implementation(libs.composeviews)
 }
