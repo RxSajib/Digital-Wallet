@@ -19,4 +19,8 @@
     <string name="nearby_merchant">Nearby Merchant</string>
     <string name="today_promotion">Today’s Promotions</string>
     <string name="more">More</string>
+    <string name="balance">Balance</string>
+    <string name="coin_reward">Coin Reward</string>
+    <string name="top_up">Top Up</string>
+    <string name="send">Send</string>
 </resources>
