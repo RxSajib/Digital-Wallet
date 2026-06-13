@@ -15,4 +15,6 @@
     <string name="privacy_policy">Privacy Policy</string>
     <string name="customer_service">Customer Service</string>
     <string name="logout">Logout</string>
+    <string name="view_all">view all</string>
+    <string name="nearby_merchant">Nearby Merchant</string>
 </resources>
