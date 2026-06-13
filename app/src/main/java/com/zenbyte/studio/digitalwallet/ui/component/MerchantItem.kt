@@ -34,14 +34,23 @@ import com.zenbyte.studio.digitalwallet.ui.theme.colorPrimaryLight
 import com.zenbyte.studio.domain.model.Merchant
 
 @Composable
-fun MerchantItem(merchant: Merchant, context: PlatformContext, onClickMerchant : (Merchant) -> Unit) {
+fun MerchantItem(
+    merchant: Merchant,
+    context: PlatformContext,
+    onClickMerchant: (Merchant) -> Unit
+) {
     Card(
         shape = RoundedCornerShape(4.dp),
-        border = BorderStroke(width = 1.dp, color = MaterialTheme.colorScheme.primary.copy(alpha = 0.1f)),
-        modifier = Modifier.width(120.dp).clickable{
-onClickMerchant.invoke(merchant)
-        }, elevation = CardDefaults.cardElevation(2.dp),
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
+        border = BorderStroke(
+            width = 1.dp,
+            color = MaterialTheme.colorScheme.primary.copy(alpha = 0.1f)
+        ),
+        modifier = Modifier
+            .width(120.dp)
+            .clickable {
+                onClickMerchant.invoke(merchant)
+            }, elevation = CardDefaults.cardElevation(2.dp),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.inversePrimary)
     ) {
         Column(
             modifier = Modifier
@@ -110,7 +119,7 @@ onClickMerchant.invoke(merchant)
                 overflow = TextOverflow.Ellipsis,
                 textAlign = TextAlign.Center
             )
-HeightSpace(height = 5.dp)
+            HeightSpace(height = 5.dp)
             Text(
                 text = merchant.category,
                 style = MaterialTheme.typography.bodySmall.copy(
@@ -140,7 +149,7 @@ fun MerchantItemPreview() {
             category = "Fast Food",
             merchantLogo = "",
         )
-    ){
+    ) {
 
     }
 }

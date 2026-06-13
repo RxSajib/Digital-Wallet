@@ -16,7 +16,13 @@ import com.zenbyte.studio.digitalwallet.R
 import com.zenbyte.studio.digitalwallet.ui.theme.adjustedFontSize
 
 @Composable
-fun AccountSettingGroup(modifier: Modifier) {
+fun AccountSettingGroup(
+    modifier: Modifier,
+    onClickAccountSetting: () -> Unit,
+    onClickReferral: () -> Unit,
+    onClickCoinAndReward: () -> Unit,
+    onClickMyVoucher: () -> Unit
+) {
     Column(modifier = modifier.fillMaxWidth()) {
         Text(
             text = stringResource(R.string.account_security),
@@ -34,29 +40,29 @@ fun AccountSettingGroup(modifier: Modifier) {
         MyMenuListItem(
             icon = painterResource(R.drawable.icon_setting),
             title = stringResource(R.string.account_setting),
-        ){
-
+        ) {
+            onClickAccountSetting.invoke()
         }
         MyMenuListItem(
             icon = painterResource(R.drawable.ic_users),
             title = stringResource(R.string.referral),
-        ){
-
+        ) {
+            onClickReferral.invoke()
         }
 
         MyMenuListItem(
             icon = painterResource(R.drawable.icon_coin),
             title = stringResource(R.string.coin_and_reward),
-        ){
-
+        ) {
+            onClickCoinAndReward.invoke()
         }
 
         MyMenuListItem(
             isDividerEnable = false,
             icon = painterResource(R.drawable.ic_voicher),
             title = stringResource(R.string.my_voucher),
-        ){
-
+        ) {
+            onClickMyVoucher.invoke()
         }
 
     }
@@ -65,5 +71,11 @@ fun AccountSettingGroup(modifier: Modifier) {
 @Composable
 @Preview
 fun AccountSettingGroupPreview() {
-    AccountSettingGroup(modifier = Modifier)
+    AccountSettingGroup(
+        modifier = Modifier,
+        onClickAccountSetting = {},
+        onClickReferral = {},
+        onClickCoinAndReward = {},
+        onClickMyVoucher = {}
+    )
 }

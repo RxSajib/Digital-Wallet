@@ -23,8 +23,17 @@ import com.zenbyte.studio.domain.model.User
 
 @Composable
 fun UserBalanceCard(modifier: Modifier, user: User, topUpClick: () -> Unit, sendClick: () -> Unit) {
-    Card(modifier = modifier, elevation = CardDefaults.cardElevation(2.dp), colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)) {
-        Row(modifier = modifier.fillMaxWidth().padding(10.dp), verticalAlignment = Alignment.CenterVertically) {
+    Card(
+        modifier = modifier,
+        elevation = CardDefaults.cardElevation(2.dp),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.inversePrimary)
+    ) {
+        Row(
+            modifier = modifier
+                .fillMaxWidth()
+                .padding(10.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
             Column(modifier = Modifier.weight(1f)) {
                 Text(
                     text = stringResource(R.string.balance),
@@ -61,15 +70,15 @@ fun UserBalanceCard(modifier: Modifier, user: User, topUpClick: () -> Unit, send
                 WalletActionButton(
                     icon = painterResource(R.drawable.ic_add_box),
                     title = stringResource(R.string.top_up)
-                ){
-topUpClick.invoke()
+                ) {
+                    topUpClick.invoke()
                 }
                 WidthSpace(width = 8.dp)
                 WalletActionButton(
                     icon = painterResource(R.drawable.ic_send_box),
                     title = stringResource(R.string.send)
-                ){
-sendClick.invoke()
+                ) {
+                    sendClick.invoke()
                 }
             }
         }

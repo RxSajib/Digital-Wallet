@@ -51,10 +51,9 @@ fun ServiceItem(service: Service, context: PlatformContext, onClickService: (Ser
             HeightSpace(height = 15.dp)
             Text(
                 text = service.title,
-                style = MaterialTheme.typography.bodyMedium.copy(
+                style = MaterialTheme.typography.bodySmall.copy(
                     fontWeight = FontWeight.Bold,
-                    color = MaterialTheme.colorScheme.primary,
-                    fontSize = adjustedFontSize(12f)
+                    color = MaterialTheme.colorScheme.primary
                 ),
                 modifier = Modifier.fillMaxWidth(),
                 textAlign = TextAlign.Center,

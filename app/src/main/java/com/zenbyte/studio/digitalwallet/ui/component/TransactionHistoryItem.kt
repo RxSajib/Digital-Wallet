@@ -41,7 +41,7 @@ fun TransactionHistoryItem(myPaymentHistory: MyPaymentHistory, context: Platform
         shape = RoundedCornerShape(4.dp),
         border = BorderStroke(width = 1.dp, color = MaterialTheme.colorScheme.primary.copy(alpha = 0.1f)),
         colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.surface
+            containerColor = MaterialTheme.colorScheme.inversePrimary
         )
     ) {
         Row(

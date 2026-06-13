@@ -23,14 +23,39 @@ import com.zenbyte.studio.digitalwallet.ui.component.MyLogoutButton
 fun ProfileScreen() {
     Column(modifier = Modifier.fillMaxSize().background(
         color = MaterialTheme.colorScheme.surface
-    ).padding(horizontal = 16.dp).verticalScroll(state = rememberScrollState())){
+    ).padding(16.dp).verticalScroll(state = rememberScrollState())){
 
-        AccountSettingGroup(modifier = Modifier)
+        AccountSettingGroup(
+            modifier = Modifier,
+            onClickAccountSetting = {
+                // handle click event
+            },
+            onClickReferral = {
+                // handle click event
+            },
+            onClickCoinAndReward = {
+                // handle click event
+            },
+            onClickMyVoucher = {
+                // handle click event
+            }
+        )
         HeightSpace(height = 24.dp)
-        GeneralSettingGroup(modifier = Modifier)
+        GeneralSettingGroup(
+            modifier = Modifier,
+            onClickTC = {
+                // handle click hear
+            },
+            onClickPrivacyPolicy = {
+                // handle click hear
+            },
+            onClickSupport = {
+                // handle click hear
+            }
+        )
         HeightSpace(height = 30.dp)
         MyLogoutButton(){
-
+                // logout implementation hear
         }
         HeightSpace(height = 10.dp)
     }

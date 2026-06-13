@@ -3,8 +3,8 @@ package com.zenbyte.studio.digitalwallet.ui.theme
 import androidx.compose.ui.graphics.Color
 
 
-val Black: Color = Color(0xFF1C1C1C)
-val White: Color = Color(0xFFF6F5F5)
+val Black: Color = Color(0xFF151515)
+val White: Color = Color(0xFFF3F3F3)
 
 val colorPrimaryLight = Color(0xFFF54D4D)
 val colorPrimaryDark = Color(0xFF2F2F2F)

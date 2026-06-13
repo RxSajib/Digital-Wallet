@@ -16,7 +16,12 @@ import com.zenbyte.studio.digitalwallet.R
 import com.zenbyte.studio.digitalwallet.ui.theme.adjustedFontSize
 
 @Composable
-fun GeneralSettingGroup(modifier: Modifier = Modifier) {
+fun GeneralSettingGroup(
+    modifier: Modifier = Modifier,
+    onClickTC: () -> Unit,
+    onClickPrivacyPolicy: () -> Unit,
+    onClickSupport: () -> Unit
+) {
     Column(modifier = modifier.fillMaxWidth()) {
         Text(
             text = stringResource(R.string.general),
@@ -34,23 +39,23 @@ fun GeneralSettingGroup(modifier: Modifier = Modifier) {
         MyMenuListItem(
             icon = painterResource(R.drawable.ic_document),
             title = stringResource(R.string.terms_conditions),
-        ){
-
+        ) {
+            onClickTC.invoke()
         }
 
         MyMenuListItem(
             icon = painterResource(R.drawable.ic_policy),
             title = stringResource(R.string.privacy_policy),
-        ){
-
+        ) {
+            onClickPrivacyPolicy.invoke()
         }
 
         MyMenuListItem(
             isDividerEnable = false,
             icon = painterResource(R.drawable.ic_customer_support),
             title = stringResource(R.string.customer_service),
-        ){
-
+        ) {
+            onClickSupport.invoke()
         }
 
     }
@@ -59,5 +64,10 @@ fun GeneralSettingGroup(modifier: Modifier = Modifier) {
 @Composable
 @Preview
 fun GeneralSettingGroupPreview(modifier: Modifier = Modifier) {
-    GeneralSettingGroup()
+    GeneralSettingGroup(
+        modifier = Modifier,
+        onClickTC = {},
+        onClickPrivacyPolicy = {},
+        onClickSupport = {}
+    )
 }

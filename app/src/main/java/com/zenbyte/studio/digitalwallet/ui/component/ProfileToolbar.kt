@@ -14,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -27,6 +28,7 @@ import coil3.request.ImageRequest
 import com.zenbyte.studio.digitalwallet.R
 import com.zenbyte.studio.digitalwallet.ui.theme.adjustedFontSize
 import com.zenbyte.studio.digitalwallet.ui.theme.colorGreen
+import com.zenbyte.studio.digitalwallet.ui.theme.colorPrimaryLight
 import com.zenbyte.studio.domain.model.User
 
 @Composable
@@ -34,7 +36,7 @@ fun ProfileToolbar(user: User, context: PlatformContext) {
     Column (
         modifier = Modifier
             .fillMaxWidth()
-            .background(color = MaterialTheme.colorScheme.onPrimary)
+            .background(color = colorPrimaryLight)
             .padding(16.dp)
     ) {
         HeightSpace(height = rememberStatusBarHeightDp() + 5.dp)
@@ -59,9 +61,10 @@ fun ProfileToolbar(user: User, context: PlatformContext) {
                 Text(
                     text = user.userName ?: "",
                     style = MaterialTheme.typography.bodyLarge.copy(
-                        color = MaterialTheme.colorScheme.surface,
+                        color = Color.White,
                         fontWeight = FontWeight.W600
                     ),
+
                     maxLines = 1,
                     overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis,
                     modifier = Modifier.fillMaxWidth()
@@ -71,7 +74,7 @@ fun ProfileToolbar(user: User, context: PlatformContext) {
                 Text(
                     text = user.userEmailAddress ?: "",
                     style = MaterialTheme.typography.bodySmall.copy(
-                        color = MaterialTheme.colorScheme.surface,
+                        color = Color.White,
                         fontWeight = FontWeight.W500
                     ),
                     maxLines = 1,
@@ -81,7 +84,7 @@ fun ProfileToolbar(user: User, context: PlatformContext) {
                 Text(
                     text = user.userPhoneNumber ?: "",
                     style = MaterialTheme.typography.bodySmall.copy(
-                        color = MaterialTheme.colorScheme.surface,
+                        color = Color.White,
                         fontWeight = FontWeight.W500
                     ),
                     maxLines = 1,

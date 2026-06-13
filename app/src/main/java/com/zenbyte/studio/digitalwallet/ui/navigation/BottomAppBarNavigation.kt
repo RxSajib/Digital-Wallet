@@ -90,13 +90,43 @@ fun BottomAppBarNavigation(
                     ProfileToolbar(context = contextCoil, user = userInfo.value?: User())
                 }
                 AppDestination.BottomAppBar.History -> {
-                    TransactionHistoryToolbar(viewModel = viewModel)
+                    TransactionHistoryToolbar(viewModel = viewModel){
+                        // handle click event hear
+                    }
                 }
                 AppDestination.BottomAppBar.Merchant -> {
-                    HomeToolBar(user = userInfo.value?: User())
+                    HomeToolBar(
+                        user = userInfo.value ?: User(),
+                        onTopUpClick = {
+                            //handle click event
+                        },
+                        onSendClick = {
+                            //handle click event
+                        },
+                        onClickReward = {
+                            //handle click event
+                        },
+                        onClickNotification = {
+                            //handle click event
+                        },
+                    )
                 }
                 AppDestination.BottomAppBar.Home -> {
-                    HomeToolBar(user = userInfo.value?: User())
+                    HomeToolBar(
+                        user = userInfo.value ?: User(),
+                        onTopUpClick = {
+                            // handle click event
+                        },
+                        onSendClick = {
+                            // handle click event
+                        },
+                        onClickReward = {
+                            //handle click event
+                        },
+                        onClickNotification = {
+                            //handle click event
+                        },
+                    )
                 }
                 else -> {
 

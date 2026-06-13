@@ -27,11 +27,12 @@ import androidx.compose.ui.text.style.TextOverflow
 
 @Composable
 fun MyCustomSearchBar(
-
+        backgroundColor : Color = MaterialTheme.colorScheme.surface,
+        hiltColor : Color = MaterialTheme.colorScheme.surface,
+        textColor : Color = MaterialTheme.colorScheme.surface,
         placeHolderText: String,
         text: String,
         onValueChange: (String) -> Unit,
-        isPasswordVisibility: Boolean = false,
         readOnly: Boolean = false,
         isNumberType: Boolean = false,
         rightIcon: Painter? = null,
@@ -53,7 +54,7 @@ fun MyCustomSearchBar(
             readOnly = readOnly,
             textStyle = MaterialTheme.typography.titleSmall.copy(
                 fontWeight = FontWeight.W500,
-                color = MaterialTheme.colorScheme.primary,
+                color = textColor,
                 textAlign = TextAlign.Start
             ),
             keyboardActions = KeyboardActions(
@@ -68,7 +69,7 @@ fun MyCustomSearchBar(
                 onValueChange.invoke(inputValue)
             },
             modifier = modifier.fillMaxWidth().clip(shape = CircleShape)
-                .background(color = MaterialTheme.colorScheme.surface)
+                .background(color = backgroundColor)
                 .clickable(readOnly) { onClick.invoke() },
             shape = CircleShape,
             colors = OutlinedTextFieldDefaults.colors(
@@ -86,7 +87,6 @@ fun MyCustomSearchBar(
                 }
             },
 
-            visualTransformation = if (!isPasswordVisibility) PasswordVisualTransformation() else VisualTransformation.None,
 
             placeholder = {
                 Text(
@@ -95,7 +95,7 @@ fun MyCustomSearchBar(
                     overflow = TextOverflow.Ellipsis,
                     style = MaterialTheme.typography.titleSmall.copy(
                         fontWeight = FontWeight.W400,
-                        color = MaterialTheme.colorScheme.primary.copy(alpha = 0.5f)
+                        color = hiltColor
                     )
                 )
             },
