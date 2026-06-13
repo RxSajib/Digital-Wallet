@@ -52,7 +52,11 @@ import com.zenbyte.studio.presentation.viewmodel.bottomNavigation.BottomNavigati
 import kotlinx.serialization.modules.SerializersModule
 import kotlinx.serialization.modules.polymorphic
 import androidx.compose.ui.platform.LocalLocale
+import coil3.compose.LocalPlatformContext
+import com.zenbyte.studio.digitalwallet.ui.component.HomeToolBar
+import com.zenbyte.studio.digitalwallet.ui.component.ProfileToolbar
 import com.zenbyte.studio.digitalwallet.ui.component.TransactionHistoryToolbar
+import com.zenbyte.studio.domain.model.User
 
 @Composable
 fun BottomAppBarNavigation(
@@ -62,6 +66,7 @@ fun BottomAppBarNavigation(
     val userInfo = viewModel.userInfo.collectAsStateWithLifecycle()
 
     val appConfig = rememberAppConfig()
+    val contextCoil = LocalPlatformContext.current
 
     val dashBoardBackStack = rememberNavBackStack(appConfig, AppDestination.BottomAppBar.Home)
     val merchantBackStack = rememberNavBackStack(appConfig, AppDestination.BottomAppBar.Merchant)
@@ -78,8 +83,9 @@ fun BottomAppBarNavigation(
 
     Scaffold(
         topBar = {
-            TransactionHistoryToolbar(viewModel = viewModel)
-           // HomeToolBar(user = userInfo.value?: User())
+          //  TransactionHistoryToolbar(viewModel = viewModel)
+          //  HomeToolBar(user = userInfo.value?: User())
+            ProfileToolbar(context = contextCoil, user = userInfo.value?: User())
         },
         bottomBar = {
             Box(

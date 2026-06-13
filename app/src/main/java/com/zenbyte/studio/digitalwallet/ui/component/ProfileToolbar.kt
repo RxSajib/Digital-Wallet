@@ -1,0 +1,137 @@
+package com.zenbyte.studio.digitalwallet.ui.component
+
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.ColorFilter
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import coil3.PlatformContext
+import coil3.compose.AsyncImage
+import coil3.compose.LocalPlatformContext
+import coil3.request.ImageRequest
+import com.zenbyte.studio.digitalwallet.R
+import com.zenbyte.studio.digitalwallet.ui.theme.adjustedFontSize
+import com.zenbyte.studio.digitalwallet.ui.theme.colorGreen
+import com.zenbyte.studio.domain.model.User
+
+@Composable
+fun ProfileToolbar(user: User, context: PlatformContext) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(color = MaterialTheme.colorScheme.onPrimary)
+            .padding(16.dp), verticalAlignment = Alignment.CenterVertically
+    ) {
+        HeightSpace(height = 28.dp)
+
+        AsyncImage(
+            modifier = Modifier
+                .size(70.dp)
+                .clip(CircleShape),
+            model = ImageRequest.Builder(context).data(user.userProfilePicture).size(500).build(),
+            error = painterResource(R.drawable.placeholder),
+            placeholder = painterResource(R.drawable.placeholder),
+            contentDescription = null,
+            contentScale = ContentScale.Crop
+        )
+        WidthSpace(width = 10.dp)
+        Column(modifier = Modifier.weight(1f)) {
+
+            Text(
+                text = user.userName ?: "",
+                style = MaterialTheme.typography.bodyLarge.copy(
+                    color = MaterialTheme.colorScheme.surface,
+                    fontWeight = FontWeight.W600
+                ),
+                maxLines = 1,
+                overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis,
+                modifier = Modifier.fillMaxWidth()
+            )
+
+            HeightSpace(height = 10.dp)
+            Text(
+                text = user.userEmailAddress ?: "",
+                style = MaterialTheme.typography.bodySmall.copy(
+                    color = MaterialTheme.colorScheme.surface,
+                    fontWeight = FontWeight.W500
+                ),
+                maxLines = 1,
+                overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis,
+                modifier = Modifier.fillMaxWidth(),
+            )
+            Text(
+                text = user.userPhoneNumber ?: "",
+                style = MaterialTheme.typography.bodySmall.copy(
+                    color = MaterialTheme.colorScheme.surface,
+                    fontWeight = FontWeight.W500
+                ),
+                maxLines = 1,
+                overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis,
+                modifier = Modifier.fillMaxWidth(),
+            )
+
+            HeightSpace(height = 5.dp)
+            if (user.isVerify) {
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier
+
+                        .clip(shape = CircleShape)
+                        .background(color = MaterialTheme.colorScheme.surface)
+                        .padding(horizontal = 10.dp, vertical = 5.dp)
+                ) {
+                    Image(
+                        painter = painterResource(R.drawable.ic_verified),
+                        contentDescription = null,
+                        modifier = Modifier.size(12.dp),
+                        colorFilter = ColorFilter.tint(color = colorGreen)
+                    )
+                    WidthSpace(width = 5.dp)
+                    Text(
+                        text = stringResource(R.string.verified),
+                        style = MaterialTheme.typography.bodySmall.copy(
+                            fontSize = adjustedFontSize(10f),
+                            color = colorGreen
+                        )
+                    )
+                }
+            }
+
+        }
+
+    }
+
+}
+
+@Composable
+fun ProfileToolbarPreview() {
+    val context = LocalPlatformContext.current
+    ProfileToolbar(
+        context = context,
+        user = User(
+            userID = 1,
+            userName = "Sajib Roy",
+            balance = 5800.00,
+            coinReward = 4.50,
+            userEmailAddress = "sajibroy206@gmail.com",
+            userPhoneNumber = "+8801771330378",
+            userProfilePicture = "",
+            isVerify = true
+        )
+    )
+}
