@@ -440,7 +440,7 @@ val serviceResponse = listOf(
         id = 1,
         title = "Electricity",
         slug = "electricity",
-        icon_url = "https://api.mockdomain.com/services/icons/electricity.png",
+        icon_url = "https://static.vecteezy.com/system/resources/previews/020/717/790/non_2x/electricity-bill-icon-lighting-utilities-yellow-glowing-light-bulb-house-vector.jpg",
         is_active = true,
         created_at = "2026-01-10T06:00:00Z",
         updated_at = "2026-06-12T10:30:00Z"
@@ -449,7 +449,7 @@ val serviceResponse = listOf(
         id = 2,
         title = "Water Bill",
         slug = "water_bill",
-        icon_url = "https://api.mockdomain.com/services/icons/water_bill.png",
+        icon_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPH9jXHbEFZCIAI_D6UpkoSElgnSgP5bUpSQ&s",
         is_active = true,
         created_at = "2026-01-10T06:00:00Z",
         updated_at = "2026-06-12T10:30:00Z"
@@ -458,7 +458,7 @@ val serviceResponse = listOf(
         id = 3,
         title = "Phone Credit",
         slug = "phone_credit",
-        icon_url = "https://api.mockdomain.com/services/icons/phone_credit.png",
+        icon_url = "https://png.pngtree.com/png-clipart/20230925/original/pngtree-flat-credit-card-payment-icon-with-mobile-banking-concept-vector-png-image_12869533.png",
         is_active = true,
         created_at = "2026-01-10T06:00:00Z",
         updated_at = "2026-06-12T10:30:00Z"
@@ -467,7 +467,7 @@ val serviceResponse = listOf(
         id = 4,
         title = "Internet",
         slug = "internet",
-        icon_url = "https://api.mockdomain.com/services/icons/internet.png",
+        icon_url = "https://img.magnific.com/free-photo/online-payment-security-concept-3d-phone-bill_107791-16722.jpg?semt=ais_hybrid&w=740&q=80",
         is_active = true,
         created_at = "2026-01-12T08:15:00Z",
         updated_at = "2026-06-11T14:22:18Z"
@@ -476,7 +476,7 @@ val serviceResponse = listOf(
         id = 5,
         title = "E-Money",
         slug = "e_money",
-        icon_url = "https://api.mockdomain.com/services/icons/e_money.png",
+        icon_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9NBPe1g5XKWEVo-zhKhBc7eZTmsSD076rXQ&s",
         is_active = true,
         created_at = "2026-01-12T08:15:00Z",
         updated_at = "2026-06-11T14:22:18Z"
@@ -485,7 +485,7 @@ val serviceResponse = listOf(
         id = 6,
         title = "G-Voucher",
         slug = "g_voucher",
-        icon_url = "https://api.mockdomain.com/services/icons/g_voucher.png",
+        icon_url = "https://cdn-icons-png.flaticon.com/512/869/869445.png",
         is_active = true,
         created_at = "2026-01-15T09:00:00Z",
         updated_at = "2026-06-05T11:45:12Z"
@@ -494,18 +494,9 @@ val serviceResponse = listOf(
         id = 7,
         title = "Netflix",
         slug = "netflix",
-        icon_url = "https://api.mockdomain.com/services/icons/netflix.png",
+        icon_url = "https://images.icon-icons.com/2699/PNG/512/netflix_logo_icon_170919.png",
         is_active = true,
         created_at = "2026-02-01T11:30:00Z",
         updated_at = "2026-06-13T09:12:05Z"
-    ),
-    ServiceDtoItem(
-        id = 8,
-        title = "More",
-        slug = "more_actions",
-        icon_url = "https://api.mockdomain.com/services/icons/more.png",
-        is_active = true,
-        created_at = "2026-01-10T06:00:00Z",
-        updated_at = "2026-01-10T06:00:00Z"
     )
 )

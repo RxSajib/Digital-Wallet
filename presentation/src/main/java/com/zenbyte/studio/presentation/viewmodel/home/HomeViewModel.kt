@@ -29,7 +29,7 @@ class HomeViewModel @Inject constructor(
 
 
     private val _servicesList = MutableStateFlow<List<Service>>(emptyList())
-    val servicesList = _servicesList.asStateFlow().take(7)
+    val servicesList = _servicesList.asStateFlow().take(6)
 
 
     init {
