@@ -24,4 +24,6 @@
     <string name="top_up">Top Up</string>
     <string name="send">Send</string>
     <string name="get_reward">Get Reward</string>
+    <string name="transaction_history">Transaction History</string>
+    <string name="search">Search</string>
 </resources>

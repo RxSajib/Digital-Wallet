@@ -3,12 +3,7 @@ package com.zenbyte.studio.digitalwallet.ui.navigation
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.WindowInsets
-import androidx.compose.foundation.layout.asPaddingValues
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -34,12 +29,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.toUpperCase
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.navigation3.rememberViewModelStoreNavEntryDecorator
-import androidx.navigation3.runtime.NavBackStack
 import androidx.navigation3.runtime.NavKey
 import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberNavBackStack
@@ -58,11 +51,8 @@ import com.zenbyte.studio.presentation.navigation.AppDestination
 import com.zenbyte.studio.presentation.viewmodel.bottomNavigation.BottomNavigationViewModel
 import kotlinx.serialization.modules.SerializersModule
 import kotlinx.serialization.modules.polymorphic
-import java.util.Locale
-import java.util.Locale.getDefault
 import androidx.compose.ui.platform.LocalLocale
-import com.zenbyte.studio.digitalwallet.ui.component.HomeToolBar
-import com.zenbyte.studio.domain.model.User
+import com.zenbyte.studio.digitalwallet.ui.component.TransactionHistoryToolbar
 
 @Composable
 fun BottomAppBarNavigation(
@@ -88,7 +78,8 @@ fun BottomAppBarNavigation(
 
     Scaffold(
         topBar = {
-            HomeToolBar(user = userInfo.value?: User())
+            TransactionHistoryToolbar(viewModel = viewModel)
+           // HomeToolBar(user = userInfo.value?: User())
         },
         bottomBar = {
             Box(

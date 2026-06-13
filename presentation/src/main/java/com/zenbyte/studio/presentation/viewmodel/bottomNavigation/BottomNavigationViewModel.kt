@@ -1,5 +1,8 @@
 package com.zenbyte.studio.presentation.viewmodel.bottomNavigation
 
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -23,7 +26,7 @@ class BottomNavigationViewModel @Inject constructor(
 
     private var _userInfo = MutableStateFlow<User?>(null)
     val userInfo: StateFlow<User?> = _userInfo.asStateFlow()
-
+    var searchInput by mutableStateOf("")
 
     private val KEY_CURRENT_TAB = "current_tab"
 
