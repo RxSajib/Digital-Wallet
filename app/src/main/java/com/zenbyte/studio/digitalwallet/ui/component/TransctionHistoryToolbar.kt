@@ -27,7 +27,7 @@ import org.jetbrains.compose.resources.painterResource
 @Composable
 fun TransactionHistoryToolbar(viewModel: BottomNavigationViewModel) {
     Column(modifier = Modifier.fillMaxWidth().background(color = MaterialTheme.colorScheme.onPrimary).padding(16.dp)) {
-        HeightSpace(height = 28.dp)
+        HeightSpace(height = rememberStatusBarHeightDp() + 5.dp)
         Text(
             text = stringResource(R.string.transaction_history),
             style = MaterialTheme.typography.titleMedium.copy(

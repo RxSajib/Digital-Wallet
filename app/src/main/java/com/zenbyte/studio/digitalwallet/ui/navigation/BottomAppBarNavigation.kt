@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.QrCodeScanner
 import androidx.compose.material3.Card
@@ -83,9 +84,26 @@ fun BottomAppBarNavigation(
 
     Scaffold(
         topBar = {
-          //  TransactionHistoryToolbar(viewModel = viewModel)
-          //  HomeToolBar(user = userInfo.value?: User())
-            ProfileToolbar(context = contextCoil, user = userInfo.value?: User())
+
+            when(currentTab){
+                AppDestination.BottomAppBar.Profile -> {
+                    ProfileToolbar(context = contextCoil, user = userInfo.value?: User())
+                }
+                AppDestination.BottomAppBar.History -> {
+                    TransactionHistoryToolbar(viewModel = viewModel)
+                }
+                AppDestination.BottomAppBar.Merchant -> {
+                    HomeToolBar(user = userInfo.value?: User())
+                }
+                AppDestination.BottomAppBar.Home -> {
+                    HomeToolBar(user = userInfo.value?: User())
+                }
+                else -> {
+
+                }
+            }
+          //
+          //
         },
         bottomBar = {
             Box(

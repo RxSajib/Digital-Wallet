@@ -31,89 +31,93 @@ import com.zenbyte.studio.domain.model.User
 
 @Composable
 fun ProfileToolbar(user: User, context: PlatformContext) {
-    Row(
+    Column (
         modifier = Modifier
             .fillMaxWidth()
             .background(color = MaterialTheme.colorScheme.onPrimary)
-            .padding(16.dp), verticalAlignment = Alignment.CenterVertically
+            .padding(16.dp)
     ) {
-        HeightSpace(height = 28.dp)
+        HeightSpace(height = rememberStatusBarHeightDp() + 5.dp)
 
-        AsyncImage(
-            modifier = Modifier
-                .size(70.dp)
-                .clip(CircleShape),
-            model = ImageRequest.Builder(context).data(user.userProfilePicture).size(500).build(),
-            error = painterResource(R.drawable.placeholder),
-            placeholder = painterResource(R.drawable.placeholder),
-            contentDescription = null,
-            contentScale = ContentScale.Crop
-        )
-        WidthSpace(width = 10.dp)
-        Column(modifier = Modifier.weight(1f)) {
+        Row(modifier = Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
 
-            Text(
-                text = user.userName ?: "",
-                style = MaterialTheme.typography.bodyLarge.copy(
-                    color = MaterialTheme.colorScheme.surface,
-                    fontWeight = FontWeight.W600
-                ),
-                maxLines = 1,
-                overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis,
-                modifier = Modifier.fillMaxWidth()
+
+            AsyncImage(
+                modifier = Modifier
+                    .size(70.dp)
+                    .clip(CircleShape),
+                model = ImageRequest.Builder(context).data(user.userProfilePicture).size(500)
+                    .build(),
+                error = painterResource(R.drawable.placeholder),
+                placeholder = painterResource(R.drawable.placeholder),
+                contentDescription = null,
+                contentScale = ContentScale.Crop
             )
+            WidthSpace(width = 10.dp)
+            Column(modifier = Modifier.weight(1f)) {
 
-            HeightSpace(height = 10.dp)
-            Text(
-                text = user.userEmailAddress ?: "",
-                style = MaterialTheme.typography.bodySmall.copy(
-                    color = MaterialTheme.colorScheme.surface,
-                    fontWeight = FontWeight.W500
-                ),
-                maxLines = 1,
-                overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis,
-                modifier = Modifier.fillMaxWidth(),
-            )
-            Text(
-                text = user.userPhoneNumber ?: "",
-                style = MaterialTheme.typography.bodySmall.copy(
-                    color = MaterialTheme.colorScheme.surface,
-                    fontWeight = FontWeight.W500
-                ),
-                maxLines = 1,
-                overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis,
-                modifier = Modifier.fillMaxWidth(),
-            )
+                Text(
+                    text = user.userName ?: "",
+                    style = MaterialTheme.typography.bodyLarge.copy(
+                        color = MaterialTheme.colorScheme.surface,
+                        fontWeight = FontWeight.W600
+                    ),
+                    maxLines = 1,
+                    overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis,
+                    modifier = Modifier.fillMaxWidth()
+                )
 
-            HeightSpace(height = 5.dp)
-            if (user.isVerify) {
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    modifier = Modifier
+                HeightSpace(height = 10.dp)
+                Text(
+                    text = user.userEmailAddress ?: "",
+                    style = MaterialTheme.typography.bodySmall.copy(
+                        color = MaterialTheme.colorScheme.surface,
+                        fontWeight = FontWeight.W500
+                    ),
+                    maxLines = 1,
+                    overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis,
+                    modifier = Modifier.fillMaxWidth(),
+                )
+                Text(
+                    text = user.userPhoneNumber ?: "",
+                    style = MaterialTheme.typography.bodySmall.copy(
+                        color = MaterialTheme.colorScheme.surface,
+                        fontWeight = FontWeight.W500
+                    ),
+                    maxLines = 1,
+                    overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis,
+                    modifier = Modifier.fillMaxWidth(),
+                )
 
-                        .clip(shape = CircleShape)
-                        .background(color = MaterialTheme.colorScheme.surface)
-                        .padding(horizontal = 10.dp, vertical = 5.dp)
-                ) {
-                    Image(
-                        painter = painterResource(R.drawable.ic_verified),
-                        contentDescription = null,
-                        modifier = Modifier.size(12.dp),
-                        colorFilter = ColorFilter.tint(color = colorGreen)
-                    )
-                    WidthSpace(width = 5.dp)
-                    Text(
-                        text = stringResource(R.string.verified),
-                        style = MaterialTheme.typography.bodySmall.copy(
-                            fontSize = adjustedFontSize(10f),
-                            color = colorGreen
+                HeightSpace(height = 5.dp)
+                if (user.isVerify) {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        modifier = Modifier
+
+                            .clip(shape = CircleShape)
+                            .background(color = MaterialTheme.colorScheme.surface)
+                            .padding(horizontal = 10.dp, vertical = 5.dp)
+                    ) {
+                        Image(
+                            painter = painterResource(R.drawable.ic_verified),
+                            contentDescription = null,
+                            modifier = Modifier.size(12.dp),
+                            colorFilter = ColorFilter.tint(color = colorGreen)
                         )
-                    )
+                        WidthSpace(width = 5.dp)
+                        Text(
+                            text = stringResource(R.string.verified),
+                            style = MaterialTheme.typography.bodySmall.copy(
+                                fontSize = adjustedFontSize(10f),
+                                color = colorGreen
+                            )
+                        )
+                    }
                 }
+
             }
-
         }
-
     }
 
 }

@@ -56,7 +56,7 @@ fun HomeToolBar(user: User) {
             ) {
 
 
-                HeightSpace(height = 28.dp)
+                HeightSpace(height = rememberStatusBarHeightDp() + 5.dp)
                 Row(modifier = Modifier.fillMaxWidth()) {
                     Text(
                         text = user.userName ?: "",
