@@ -2,7 +2,25 @@
 
 A modern, offline-first Android Digital Wallet application built with clean architecture principles, multi-module structure, and Jetpack Compose. This project simulates an enterprise-level mobile banking environment using reactive state streams and local mock data repositories instead of network-bound HTTP requests.
 
+
 ---
+
+# 📸 Screenshots (Light)
+
+<p align="center">
+  <img src="https://github.com/RxSajib/Digital-Wallet/blob/development/screen/light/home.png?raw=true" width="250"/>
+  <img src="https://github.com/RxSajib/Digital-Wallet/blob/development/screen/light/history.png?raw=true" width="250"/>
+  <img src="https://github.com/RxSajib/Digital-Wallet/blob/development/screen/light/profile.png?raw=true" width="250"/>
+</p>
+
+# 📸 Screenshots (Dark)
+
+<p align="center">
+  <img src="https://github.com/RxSajib/Digital-Wallet/blob/development/screen/dark/home.png?raw=true" width="250"/>
+  <img src="https://github.com/RxSajib/Digital-Wallet/blob/development/screen/dark/history.png?raw=true" width="250"/>
+  <img src="https://github.com/RxSajib/Digital-Wallet/blob/development/screen/dark/profile.png?raw=true" width="250"/>
+</p>
+
 
 ## 🏛 Architecture Overview
 
@@ -86,6 +104,7 @@ Even though the app processes static mock structures internally, the data flow s
 ```
 
 ---
+
 
 ## 📂 Project Directory Structure
 
