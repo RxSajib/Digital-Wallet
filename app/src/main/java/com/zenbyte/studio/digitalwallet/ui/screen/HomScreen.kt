@@ -61,7 +61,7 @@ fun HomeScreen() {
 
 
         item(span = { GridItemSpan(maxLineSpan) }) {
-            HeightSpace(height = 6.dp)
+          //  HeightSpace(height = 6.dp)
         }
 
         items(
@@ -86,12 +86,12 @@ fun HomeScreen() {
             span = { GridItemSpan(maxLineSpan) }
         ) {
             Column {
-                HeightSpace(height = 10.dp)
+                HeightSpace(height = 8.dp)
                 SectionHeader(
                     title = stringResource(R.string.today_promotion),
                     modifier = Modifier.padding(horizontal = 16.dp)
                 ) {}
-                HeightSpace(height = 10.dp)
+                HeightSpace(height = 8.dp)
             }
         }
 
@@ -123,14 +123,14 @@ fun HomeScreen() {
             span = { GridItemSpan(maxLineSpan) }
         ) {
             Column {
-                HeightSpace(height = 10.dp)
+                HeightSpace(height = 8.dp)
                 SectionHeader(
                     title = stringResource(R.string.nearby_merchant),
                     modifier = Modifier.padding(horizontal = 16.dp)
                 ) {
                     // handle click event for view all button
                 }
-                HeightSpace(height = 10.dp)
+                HeightSpace(height = 8.dp)
             }
         }
 
@@ -141,7 +141,7 @@ fun HomeScreen() {
             LazyRow(
                 contentPadding = PaddingValues(horizontal = 16.dp),
                 modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(10.dp)
+                horizontalArrangement = Arrangement.spacedBy(16.dp)
             ) {
                 items(
                     items = merchantList.value,

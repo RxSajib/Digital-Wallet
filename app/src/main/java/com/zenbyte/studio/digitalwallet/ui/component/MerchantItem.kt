@@ -46,7 +46,7 @@ fun MerchantItem(
             color = MaterialTheme.colorScheme.primary.copy(alpha = 0.1f)
         ),
         modifier = Modifier
-            .width(120.dp)
+            .width(94.dp)
             .clickable {
                 onClickMerchant.invoke(merchant)
             }, elevation = CardDefaults.cardElevation(2.dp),
