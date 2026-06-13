@@ -13,7 +13,8 @@ object DataMapper {
             displayDate = paymentHistoryDto.displayDate,
             amount = paymentHistoryDto.amount,
             status = paymentHistoryDto.status,
-            icon_url = paymentHistoryDto.iconUrl
+            icon_url = paymentHistoryDto.iconUrl,
+            paymentType = paymentHistoryDto.type
         )
     }
 

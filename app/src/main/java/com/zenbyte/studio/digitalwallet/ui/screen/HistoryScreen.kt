@@ -1,20 +1,41 @@
 package com.zenbyte.studio.digitalwallet.ui.screen
 
-import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Text
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import coil3.compose.LocalPlatformContext
+import com.zenbyte.studio.digitalwallet.ui.component.TransactionHistoryItem
 import com.zenbyte.studio.presentation.viewmodel.paymentHistory.HistoryViewModel
 
 @Composable
 fun HistoryScreen() {
 
-    val paymentHistory : HistoryViewModel = hiltViewModel()
+    val paymentHistory: HistoryViewModel = hiltViewModel()
+    val transactionHistoryData by paymentHistory.paymentHistory.collectAsStateWithLifecycle()
+    val contextCoil = LocalPlatformContext.current
 
-    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
-        Text("History Screen")
+    LazyColumn(
+        modifier = Modifier.fillMaxSize(),
+        contentPadding = PaddingValues(16.dp),
+        verticalArrangement = Arrangement.spacedBy(16.dp)
+    ) {
+        items(
+            items = transactionHistoryData,
+            key = { it.id },
+            contentType = { "transaction_item" }
+        ) { transactionHistory ->
+            TransactionHistoryItem(
+                context = contextCoil,
+                myPaymentHistory = transactionHistory
+            )
+        }
     }
 }

@@ -2,7 +2,7 @@ package com.zenbyte.studio.data.model
 
 
 data class PaymentHistoryDto(
-    val id: String,
+    val id: Int,
     val title: String,
     val transactionType: String,
     val timestamp: String,
