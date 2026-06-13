@@ -162,6 +162,32 @@ This flattens complex view elements (Banners, Headers, and Horizontal rows) into
 
 ---
 
+## 📝 Key Engineering Assumptions
+
+During the scoping and architectural design phases of this digital wallet application, the following engineering assumptions and structural constraints were established:
+
+* **Bypassed Network Stack (Zero HTTP Overhead)**: The application assumes a completely offline, self-contained environment for architectural evaluation. The `Api` component does not open active network sockets or initialize Retrofit/Ktor clients; instead, it intercepts requests locally and pulls raw data arrays directly from the internal `Data Sources` collections, serving as a high-speed simulated server.
+* **Simulated Async Latency**: To accurately mimic production-grade asynchronous behaviors, the local API wrapper forces thread switching using Kotlin Coroutine dispatchers (`Dispatchers.IO`) and manual delay sequences (`500ms` - `1500ms`). This allows the architecture to test transient UI states (Loading, Shimmer rendering, and Content Success transitions) without deploying an actual remote backend server.
+* **Transient Memory State (In-Memory Isolation)**: The structural datasets declared inside the local data sources operate exclusively as static, read-only structures mirroring a finalized database snapshot. Any state updates, toggle preferences, or interactive changes performed in the presentation UI layer are isolated strictly within the active `ViewModel` memory space and do not write back or alter the underlying mock arrays.
+* **Production-Grade APK Footprint Optimization**: To guarantee a highly lightweight and optimized compilation size, no heavy visual media assets (such as vendor logos or promo banners) are bundled inside the app's local drawable or raw asset paths. Instead, all graphic payloads are hosted remotely and streamed on-demand from production CDNs (*Picsum / Unsplash*) using the **Coil** image loading library.
+* **Single-Activity Architecture Enforced**: In strict alignment with modern Android development standards, the application eliminates legacy XML layouts and multiple activity weights. The single `MainActivity` serves purely as an entry-point viewport container to mount the root Jetpack Compose canvas and establish the Hilt dependency graph.
+
+
+
+## ⏱️ Development Time Breakdown (Time Spent)
+
+The design, modular isolation, and code implementation of this project took approximately **18.0 Hours** of active development time, segmented as follows:
+
+| Development Phase | Key Tasks Executed | Time Spent |
+| :--- | :--- | :--- |
+| **Architectural Setup** | Multi-module Gradle routing configuration, Hilt dependency tree setups, and `.gitignore` safety mapping. | `2.5 Hours` |
+| **Domain Layer Formulation** | Modeling pure data structures, declaring use-case bounds, and defining repository abstract contracts. | `3.0 Hours` |
+| **Data Simulation Engineering** | Constructing static Data Sources, writing unidirectional model mappers, and designing the coroutine-based simulated network API latency wrapper. | `4.5 Hours` |
+| **Presentation Componentry** | Drafting Jetpack Compose layout engines, flattening the custom `LazyVerticalGrid` spans, and resolving landscape window inset bugs. | `6.0 Hours` |
+| **Testing & Review** | Recomposition performance checks, layout tracking across multiple screen sizes, and documentation compilation. | `2.0 Hours` |
+| **Total Estimated Effort** | | **`18.0 Hours`** |
+
+
 ## 🛠 Setup & Run Instructions
 
 1. Clone this repository to your local directory machine:
