@@ -3,17 +3,19 @@ package com.zenbyte.studio.digitalwallet.ui.navigation
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.QrCodeScanner
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.FloatingActionButtonDefaults
 import androidx.compose.material3.Icon
@@ -23,6 +25,9 @@ import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarColors
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
@@ -59,6 +64,7 @@ import com.zenbyte.studio.digitalwallet.ui.component.ProfileToolbar
 import com.zenbyte.studio.digitalwallet.ui.component.TransactionHistoryToolbar
 import com.zenbyte.studio.domain.model.User
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun BottomAppBarNavigation(
     viewModel: BottomNavigationViewModel = hiltViewModel()
@@ -85,15 +91,17 @@ fun BottomAppBarNavigation(
     Scaffold(
         topBar = {
 
-            when(currentTab){
+            when (currentTab) {
                 AppDestination.BottomAppBar.Profile -> {
-                    ProfileToolbar(context = contextCoil, user = userInfo.value?: User())
+                    ProfileToolbar(context = contextCoil, user = userInfo.value ?: User())
                 }
+
                 AppDestination.BottomAppBar.History -> {
-                    TransactionHistoryToolbar(viewModel = viewModel){
+                    TransactionHistoryToolbar(viewModel = viewModel) {
                         // handle click event hear
                     }
                 }
+
                 AppDestination.BottomAppBar.Merchant -> {
                     HomeToolBar(
                         user = userInfo.value ?: User(),
@@ -111,6 +119,7 @@ fun BottomAppBarNavigation(
                         },
                     )
                 }
+
                 AppDestination.BottomAppBar.Home -> {
                     HomeToolBar(
                         user = userInfo.value ?: User(),
@@ -128,14 +137,15 @@ fun BottomAppBarNavigation(
                         },
                     )
                 }
+
                 else -> {
 
                 }
             }
-          //
-          //
+
         },
         bottomBar = {
+
             Box(
                 modifier = Modifier
                     .fillMaxWidth(),
@@ -157,7 +167,10 @@ fun BottomAppBarNavigation(
                     contentColor = Color.White,
                     elevation = FloatingActionButtonDefaults.elevation(8.dp)
                 ) {
-                    Column (verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally) {
+                    Column(
+                        verticalArrangement = Arrangement.Center,
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
                         Icon(
                             imageVector = Icons.Filled.QrCodeScanner,
                             contentDescription = null,

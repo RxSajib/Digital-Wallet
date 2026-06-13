@@ -8,9 +8,12 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -30,45 +33,52 @@ import com.zenbyte.studio.digitalwallet.ui.theme.colorSurfaceTintDark
 import com.zenbyte.studio.presentation.viewmodel.bottomNavigation.BottomNavigationViewModel
 import org.jetbrains.compose.resources.painterResource
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TransactionHistoryToolbar(viewModel: BottomNavigationViewModel, onClickSearchSetting: () -> Unit) {
-    Column(modifier = Modifier.fillMaxWidth().background(color = colorPrimaryLight).padding(16.dp)) {
-        HeightSpace(height = rememberStatusBarHeightDp() + 5.dp)
-        Text(
-            text = stringResource(R.string.transaction_history),
-            style = MaterialTheme.typography.titleMedium.copy(
-                color = Color.White,
-                fontSize = adjustedFontSize(20f),
-                fontWeight = FontWeight.W700
-            ),
-            maxLines = 1,
-            overflow = TextOverflow.Ellipsis,
-            modifier = Modifier.fillMaxWidth()
-        )
-        HeightSpace(height = 15.dp)
-        Row(modifier = Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-            MyCustomSearchBar(
-                hiltColor = Black,
-                textColor = Black,
-                backgroundColor = Color.White,
-                text = viewModel.searchInput,
-                placeHolderText = stringResource(R.string.search),
-                onValueChange = {input ->
-                    viewModel.searchInput = input
-                },
-                modifier = Modifier.weight(1f),
-                onClick = {}
-            )
-            WidthSpace(width = 8.dp)
-            Icon(
-                painter = painterResource(R.drawable.ic_setting),
-                contentDescription = null,
-                modifier = Modifier.size(30.dp).clickable{
-                    onClickSearchSetting.invoke()
-                },
-                tint = Color.White
-            )
+
+    TopAppBar(
+        colors = TopAppBarDefaults.topAppBarColors(containerColor = colorPrimaryLight),
+        title = {
+            Column(modifier = Modifier.fillMaxWidth().padding(top = 16.dp, bottom = 16.dp, end = 16.dp)) {
+                Text(
+                    text = stringResource(R.string.transaction_history),
+                    style = MaterialTheme.typography.titleMedium.copy(
+                        color = Color.White,
+                        fontSize = adjustedFontSize(20f),
+                        fontWeight = FontWeight.W700
+                    ),
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
+                    modifier = Modifier.fillMaxWidth()
+                )
+                HeightSpace(height = 15.dp)
+                Row(modifier = Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+                    MyCustomSearchBar(
+                        hiltColor = Black,
+                        textColor = Black,
+                        backgroundColor = Color.White,
+                        text = viewModel.searchInput,
+                        placeHolderText = stringResource(R.string.search),
+                        onValueChange = {input ->
+                            viewModel.searchInput = input
+                        },
+                        modifier = Modifier.weight(1f),
+                        onClick = {}
+                    )
+                    WidthSpace(width = 8.dp)
+                    Icon(
+                        painter = painterResource(R.drawable.ic_setting),
+                        contentDescription = null,
+                        modifier = Modifier.size(30.dp).clickable{
+                            onClickSearchSetting.invoke()
+                        },
+                        tint = Color.White
+                    )
+                }
+            }
+
         }
-    }
+    )
 }
 
