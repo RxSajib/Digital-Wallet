@@ -62,6 +62,7 @@ import coil3.compose.LocalPlatformContext
 import com.zenbyte.studio.digitalwallet.ui.component.HomeToolBar
 import com.zenbyte.studio.digitalwallet.ui.component.ProfileToolbar
 import com.zenbyte.studio.digitalwallet.ui.component.TransactionHistoryToolbar
+import com.zenbyte.studio.digitalwallet.ui.component.rememberBottomBarHeightDp
 import com.zenbyte.studio.domain.model.User
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -161,7 +162,7 @@ fun BottomAppBarNavigation(
                     },
                     modifier = Modifier
                         .size(64.dp)
-                        .offset(y = (-80).dp),
+                        .offset(y = (-(rememberBottomBarHeightDp()*2))),
                     shape = CircleShape,
                     containerColor = colorPrimaryLight,
                     contentColor = Color.White,
