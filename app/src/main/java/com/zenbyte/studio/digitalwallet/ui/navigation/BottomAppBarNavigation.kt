@@ -61,12 +61,15 @@ import kotlinx.serialization.modules.polymorphic
 import java.util.Locale
 import java.util.Locale.getDefault
 import androidx.compose.ui.platform.LocalLocale
+import com.zenbyte.studio.digitalwallet.ui.component.HomeToolBar
+import com.zenbyte.studio.domain.model.User
 
 @Composable
 fun BottomAppBarNavigation(
     viewModel: BottomNavigationViewModel = hiltViewModel()
 ) {
     val currentTab by viewModel.currentTab.collectAsStateWithLifecycle()
+    val userInfo = viewModel.userInfo.collectAsStateWithLifecycle()
 
     val appConfig = rememberAppConfig()
 
@@ -84,6 +87,9 @@ fun BottomAppBarNavigation(
     }
 
     Scaffold(
+        topBar = {
+            HomeToolBar(user = userInfo.value?: User())
+        },
         bottomBar = {
             Box(
                 modifier = Modifier

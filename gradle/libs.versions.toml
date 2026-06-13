@@ -25,6 +25,7 @@ navigationCompose = "1.0.0-alpha06"
 navigationViewModel = "2.10.0-alpha07"
 materialIconsExtended = "1.7.3"
 composeviews = "1.9.0.4"
+constraintlayoutCompose = "1.1.1"
 
 
 [libraries]
@@ -60,6 +61,7 @@ jetbrains-lifecycle-viewmodelNavigation3 = { module = "org.jetbrains.androidx.li
 androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycleRuntimeKtx" }
 material-icons-extended = { module = "org.jetbrains.compose.material:material-icons-extended", version.ref = "materialIconsExtended" }
 composeviews = { module = "io.github.ltttttttttttt:ComposeViews", version.ref = "composeviews" }
+androidx-constraintlayout-compose = { group = "androidx.constraintlayout", name = "constraintlayout-compose", version.ref = "constraintlayoutCompose" }
 
 
 [plugins]

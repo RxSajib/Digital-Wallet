@@ -88,4 +88,6 @@ dependencies {
 
     //banner
     implementation(libs.composeviews)
+// constraintlayout
+    implementation(libs.androidx.constraintlayout.compose)
 }

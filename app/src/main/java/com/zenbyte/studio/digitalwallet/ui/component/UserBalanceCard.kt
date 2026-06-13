@@ -22,9 +22,9 @@ import com.zenbyte.studio.digitalwallet.ui.theme.adjustedFontSize
 import com.zenbyte.studio.domain.model.User
 
 @Composable
-fun UserBalanceCard(user: User, topUpClick: () -> Unit, sendClick: () -> Unit) {
-    Card(modifier = Modifier, elevation = CardDefaults.cardElevation(2.dp), colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)) {
-        Row(modifier = Modifier.fillMaxWidth().padding(10.dp), verticalAlignment = Alignment.CenterVertically) {
+fun UserBalanceCard(modifier: Modifier, user: User, topUpClick: () -> Unit, sendClick: () -> Unit) {
+    Card(modifier = modifier, elevation = CardDefaults.cardElevation(2.dp), colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)) {
+        Row(modifier = modifier.fillMaxWidth().padding(10.dp), verticalAlignment = Alignment.CenterVertically) {
             Column(modifier = Modifier.weight(1f)) {
                 Text(
                     text = stringResource(R.string.balance),
@@ -82,6 +82,7 @@ sendClick.invoke()
 @Preview
 fun UserBalanceCardPreview() {
     UserBalanceCard(
+        modifier = Modifier,
         user = User(
             userID = 1,
             userName = "Sajib Roy",
