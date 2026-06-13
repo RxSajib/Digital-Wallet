@@ -34,7 +34,8 @@ object DataMapper {
             displayDistance = merchantDto.display_distance,
             rating = merchantDto.rating,
             name = merchantDto.name,
-            category = merchantDto.category
+            category = merchantDto.category,
+            merchantLogo = merchantDto.logo_url
         )
     }
     fun mapMerchantDtoListToMyMerchantList(merchantDtoList: List<MerchantDto>): List<Merchant>{

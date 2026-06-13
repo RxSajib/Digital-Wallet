@@ -5,5 +5,6 @@ data class Merchant(
     val displayDistance : String,
     val rating : Double,
     val name : String,
-    val category : String
+    val category : String,
+    val merchantLogo : String
 )
