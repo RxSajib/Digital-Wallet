@@ -1,3 +1,30 @@
 <resources>
     <string name="app_name">Digital Wallet</string>
+    <string name="home">Home</string>
+    <string name="merchant">Merchant</string>
+    <string name="history">History</string>
+    <string name="profile">Profile</string>
+    <string name="scan">Scan</string>
+    <string name="account_setting">Account Setting</string>
+    <string name="account_security">Account &amp; Security</string>
+    <string name="referral">Referral</string>
+    <string name="coin_and_reward">Coin &amp; Reward</string>
+    <string name="my_voucher">My Voucher</string>
+    <string name="general">General</string>
+    <string name="terms_conditions">Terms &amp; Conditions</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="customer_service">Customer Service</string>
+    <string name="logout">Logout</string>
+    <string name="view_all">view all</string>
+    <string name="nearby_merchant">Nearby Merchant</string>
+    <string name="today_promotion">Today’s Promotions</string>
+    <string name="more">More</string>
+    <string name="balance">Balance</string>
+    <string name="coin_reward">Coin Reward</string>
+    <string name="top_up">Top Up</string>
+    <string name="send">Send</string>
+    <string name="get_reward">Get Reward</string>
+    <string name="transaction_history">Transaction History</string>
+    <string name="search">Search</string>
+    <string name="verified">Verified</string>
 </resources>

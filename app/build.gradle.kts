@@ -1,6 +1,9 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.dagger.hilt)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.kotlinx.serialization)
 }
 
 android {
@@ -53,4 +56,38 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
     debugImplementation(libs.androidx.compose.ui.tooling)
+
+    implementation(project(":presentation"))
+
+    // retrofit android
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.okhttp)
+    implementation(libs.logging.interceptor)
+
+    // hilt android
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.android.compiler)
+
+    // hilt navigation compose
+    implementation(libs.androidx.hilt.navigation.compose)
+
+    // coil compose for image loading
+    implementation(libs.coil.compose)
+    implementation(libs.coil.network.okhttp)
+
+    //kotlin x serilization json
+    implementation(libs.kotlin.serialization.json)
+
+    // navigation
+    implementation(libs.navigation3.ui)
+    implementation(libs.jetbrains.lifecycle.viewmodelNavigation3)
+
+    // icon ectended
+    implementation(libs.material.icons.extended)
+
+    //banner
+    implementation(libs.composeviews)
+// constraintlayout
+    implementation(libs.androidx.constraintlayout.compose)
 }
