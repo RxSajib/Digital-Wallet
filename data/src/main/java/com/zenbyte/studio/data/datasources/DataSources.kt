@@ -1,5 +1,6 @@
 package com.zenbyte.studio.data.datasources
 
+import com.zenbyte.studio.data.model.MerchantDto
 import com.zenbyte.studio.data.model.PaymentHistoryDto
 
 val paymentHistoryResponse = listOf(
@@ -262,5 +263,173 @@ val paymentHistoryResponse = listOf(
         type = "CREDIT",
         status = "SUCCESS",
         iconUrl = "https://static.vecteezy.com/system/resources/previews/036/885/312/non_2x/blue-send-icon-free-png.png"
+    )
+)
+
+val merchantData = listOf(
+    MerchantDto(
+        id = 1,
+        name = "KFC",
+        category = "Fast Food",
+        distance_km = 1.2,
+        display_distance = "1.2 km",
+        rating = 4.8,
+        logo_url = "https://api.mockdomain.com/logos/kfc.png",
+        created_at = "2026-01-15T08:30:00Z",
+        updated_at = "2026-06-10T14:22:18Z"
+    ),
+    MerchantDto(
+        id = 2,
+        name = "Burger King",
+        category = "Fast Food",
+        distance_km = 1.2,
+        display_distance = "1.2 km",
+        rating = 4.8,
+        logo_url = "https://api.mockdomain.com/logos/burger_king.png",
+        created_at = "2026-01-15T09:15:00Z",
+        updated_at = "2026-06-12T11:05:42Z"
+    ),
+    MerchantDto(
+        id = 3,
+        name = "Pizza Hut",
+        category = "Fast Food",
+        distance_km = 1.2,
+        display_distance = "1.2 km",
+        rating = 4.8,
+        logo_url = "https://api.mockdomain.com/logos/pizza_hut.png",
+        created_at = "2026-01-16T10:00:00Z",
+        updated_at = "2026-06-11T09:45:12Z"
+    ),
+    MerchantDto(
+        id = 4,
+        name = "McDonald's",
+        category = "Fast Food",
+        distance_km = 1.5,
+        display_distance = "1.5 km",
+        rating = 4.6,
+        logo_url = "https://api.mockdomain.com/logos/mcdonalds.png",
+        created_at = "2026-01-20T14:35:00Z",
+        updated_at = "2026-05-28T16:18:00Z"
+    ),
+    MerchantDto(
+        id = 5,
+        name = "Domino's Pizza",
+        category = "Fast Food",
+        distance_km = 0.8,
+        display_distance = "0.8 km",
+        rating = 4.7,
+        logo_url = "https://api.mockdomain.com/logos/dominos.png",
+        created_at = "2026-01-22T11:20:00Z",
+        updated_at = "2026-06-13T10:00:00Z"
+    ),
+    MerchantDto(
+        id = 6,
+        name = "Subway",
+        category = "Healthy Fast Food",
+        distance_km = 2.1,
+        display_distance = "2.1 km",
+        rating = 4.3,
+        logo_url = "https://api.mockdomain.com/logos/subway.png",
+        created_at = "2026-02-02T07:45:00Z",
+        updated_at = "2026-06-01T13:14:22Z"
+    ),
+    MerchantDto(
+        id = 7,
+        name = "Chillox",
+        category = "Burgers & Shakes",
+        distance_km = 1.1,
+        display_distance = "1.1 km",
+        rating = 4.9,
+        logo_url = "https://api.mockdomain.com/logos/chillox.png",
+        created_at = "2026-02-10T16:00:00Z",
+        updated_at = "2026-06-12T22:40:11Z"
+    ),
+    MerchantDto(
+        id = 8,
+        name = "Takeout",
+        category = "Burgers",
+        distance_km = 1.4,
+        display_distance = "1.4 km",
+        rating = 4.7,
+        logo_url = "https://api.mockdomain.com/logos/takeout.png",
+        created_at = "2026-02-12T12:10:00Z",
+        updated_at = "2026-06-09T17:55:00Z"
+    ),
+    MerchantDto(
+        id = 9,
+        name = "BFC",
+        category = "Fried Chicken",
+        distance_km = 2.5,
+        display_distance = "2.5 km",
+        rating = 4.2,
+        logo_url = "https://api.mockdomain.com/logos/bfc.png",
+        created_at = "2026-02-18T09:30:00Z",
+        updated_at = "2026-04-20T11:12:34Z"
+    ),
+    MerchantDto(
+        id = 10,
+        name = "Madchef",
+        category = "Fast Food",
+        distance_km = 1.7,
+        display_distance = "1.7 km",
+        rating = 4.6,
+        logo_url = "https://api.mockdomain.com/logos/madchef.png",
+        created_at = "2026-03-01T15:20:00Z",
+        updated_at = "2026-06-11T14:30:22Z"
+    ),
+    MerchantDto(
+        id = 11,
+        name = "Secret Recipe",
+        category = "Cakes & Fast Food",
+        distance_km = 3.0,
+        display_distance = "3.0 km",
+        rating = 4.5,
+        logo_url = "https://api.mockdomain.com/logos/secret_recipe.png",
+        created_at = "2026-03-05T11:00:00Z",
+        updated_at = "2026-06-05T09:20:15Z"
+    ),
+    MerchantDto(
+        id = 12,
+        name = "CP Five Star",
+        category = "Fried Chicken",
+        distance_km = 0.5,
+        display_distance = "0.5 km",
+        rating = 4.4,
+        logo_url = "https://api.mockdomain.com/logos/cp.png",
+        created_at = "2026-03-14T08:15:00Z",
+        updated_at = "2026-06-13T06:45:00Z"
+    ),
+    MerchantDto(
+        id = 13,
+        name = "Sultan's Dine",
+        category = "Biryani & Kacchi",
+        distance_km = 2.2,
+        display_distance = "2.2 km",
+        rating = 4.9,
+        logo_url = "https://api.mockdomain.com/logos/sultans_dine.png",
+        created_at = "2026-03-22T10:40:00Z",
+        updated_at = "2026-06-12T19:30:55Z"
+    ),
+    MerchantDto(
+        id = 14,
+        name = "Kacchi Bhai",
+        category = "Biryani & Kacchi",
+        distance_km = 1.9,
+        display_distance = "1.9 km",
+        rating = 4.8,
+        logo_url = "https://api.mockdomain.com/logos/kacchi_bhai.png",
+        created_at = "2026-04-02T11:50:00Z",
+        updated_at = "2026-06-12T21:15:40Z"
+    ),
+    MerchantDto(
+        id = 15,
+        name = "Star Kabab",
+        category = "Traditional Fast Food",
+        distance_km = 2.8,
+        display_distance = "2.8 km",
+        rating = 4.7,
+        logo_url = "https://api.mockdomain.com/logos/star_kabab.png",
+        created_at = "2026-04-10T06:00:00Z",
+        updated_at = "2026-06-10T12:00:00Z"
     )
 )
