@@ -21,9 +21,7 @@ import com.zenbyte.studio.digitalwallet.ui.component.MyLogoutButton
 
 @Composable
 fun ProfileScreen() {
-    Column(modifier = Modifier.fillMaxSize().background(
-        color = MaterialTheme.colorScheme.surface
-    ).padding(16.dp).verticalScroll(state = rememberScrollState())){
+    Column(modifier = Modifier.fillMaxSize().padding(16.dp).verticalScroll(state = rememberScrollState())){
 
         AccountSettingGroup(
             modifier = Modifier,

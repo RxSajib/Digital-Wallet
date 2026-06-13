@@ -70,4 +70,9 @@ class HomeViewModel @Inject constructor(
 
         }
     }
+
+    override fun onCleared() {
+        super.onCleared()
+        MyCustomLogger.logMessageInfo(tag = TAG, message = "ViewModel cleared")
+    }
 }

@@ -301,7 +301,7 @@ val merchantData = listOf(
         distance_km = 1.2,
         display_distance = "1.2 km",
         rating = 4.8,
-        logo_url = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Pizza_hut_logo_international.svg/1280px-Pizza_hut_logo_international.svg.png",
+        logo_url = "https://play-lh.googleusercontent.com/I7i0zo433cwWr3KmL715YKqEaF31cvGlz7AJhmp0qYMnh2udHgwxO5MzGpU747d-YFLZyGfEE_MgtmJvlGR1Dg",
         created_at = "2026-01-16T10:00:00Z",
         updated_at = "2026-06-11T09:45:12Z"
     ),
@@ -312,7 +312,7 @@ val merchantData = listOf(
         distance_km = 1.5,
         display_distance = "1.5 km",
         rating = 4.6,
-        logo_url = "https://images.seeklogo.com/logo-png/37/1/mcdonalds-logo-png_seeklogo-370359.png",
+        logo_url = "https://theconsumerverse.wordpress.com/wp-content/uploads/2019/10/mcdonalds-green.jpg",
         created_at = "2026-01-20T14:35:00Z",
         updated_at = "2026-05-28T16:18:00Z"
     ),
@@ -323,7 +323,7 @@ val merchantData = listOf(
         distance_km = 0.8,
         display_distance = "0.8 km",
         rating = 4.7,
-        logo_url = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Dominos_pizza_logo.svg/3840px-Dominos_pizza_logo.svg.png",
+        logo_url = "https://www.clipartmax.com/png/middle/27-271548_dominos-pizza-dominos-pizza-logo-png.png",
         created_at = "2026-01-22T11:20:00Z",
         updated_at = "2026-06-13T10:00:00Z"
     ),
@@ -345,7 +345,7 @@ val merchantData = listOf(
         distance_km = 1.1,
         display_distance = "1.1 km",
         rating = 4.9,
-        logo_url = "https://images.seeklogo.com/logo-png/64/1/chillox-logo-png_seeklogo-647089.png",
+        logo_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm8uIgW8dzx9PUwvk1UbMIvAGOXy7c-EmBuw&s",
         created_at = "2026-02-10T16:00:00Z",
         updated_at = "2026-06-12T22:40:11Z"
     ),

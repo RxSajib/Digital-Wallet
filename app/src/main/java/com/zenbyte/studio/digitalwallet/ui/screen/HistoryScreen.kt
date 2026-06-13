@@ -25,7 +25,7 @@ fun HistoryScreen() {
     val transactionHistoryData by paymentHistory.paymentHistory.collectAsStateWithLifecycle()
     val contextCoil = LocalPlatformContext.current
 
-    Surface(modifier = Modifier.fillMaxSize().background(color = MaterialTheme.colorScheme.surface)) {
+    Surface(modifier = Modifier.fillMaxSize()) {
         LazyColumn(
             modifier = Modifier.fillMaxSize(),
             contentPadding = PaddingValues(16.dp),
