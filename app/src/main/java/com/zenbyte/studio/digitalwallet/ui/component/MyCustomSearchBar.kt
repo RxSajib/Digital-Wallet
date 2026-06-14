@@ -4,6 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Icon
@@ -24,6 +25,7 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.unit.dp
 
 @Composable
 fun MyCustomSearchBar(
@@ -36,6 +38,7 @@ fun MyCustomSearchBar(
         readOnly: Boolean = false,
         isNumberType: Boolean = false,
         rightIcon: Painter? = null,
+        leadingIcon : Painter? = null,
         isSearchEnable: Boolean = false,
         onSearch: ((String) -> Unit)? = null,
         modifier: Modifier,
@@ -68,10 +71,10 @@ fun MyCustomSearchBar(
             onValueChange = {  inputValue ->
                 onValueChange.invoke(inputValue)
             },
-            modifier = modifier.fillMaxWidth().clip(shape = CircleShape)
+            modifier = modifier.fillMaxWidth().clip(shape = RoundedCornerShape(10.dp))
                 .background(color = backgroundColor)
                 .clickable(readOnly) { onClick.invoke() },
-            shape = CircleShape,
+            shape = RoundedCornerShape(10.dp),
             colors = OutlinedTextFieldDefaults.colors(
                 focusedBorderColor = Color.Transparent,
                 unfocusedBorderColor = Color.Transparent,
@@ -82,6 +85,15 @@ fun MyCustomSearchBar(
                 rightIcon?.let { rightIcon ->
                     Icon(
                         painter = rightIcon,
+                        contentDescription = null
+                    )
+                }
+            },
+
+            leadingIcon = {
+                leadingIcon?.let {
+                    Icon(
+                        painter = leadingIcon,
                         contentDescription = null
                     )
                 }

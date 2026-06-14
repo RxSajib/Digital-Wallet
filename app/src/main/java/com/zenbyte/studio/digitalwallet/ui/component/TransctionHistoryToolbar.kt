@@ -58,11 +58,13 @@ fun TransactionHistoryToolbar(viewModel: BottomNavigationViewModel, onClickSearc
                         hiltColor = Black,
                         textColor = Black,
                         backgroundColor = Color.White,
+
                         text = viewModel.searchInput,
                         placeHolderText = stringResource(R.string.search),
                         onValueChange = {input ->
                             viewModel.searchInput = input
                         },
+                        leadingIcon = painterResource(R.drawable.ic_search),
                         modifier = Modifier.weight(1f),
                         onClick = {}
                     )
