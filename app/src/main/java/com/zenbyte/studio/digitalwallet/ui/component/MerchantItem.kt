@@ -55,7 +55,7 @@ fun MerchantItem(
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(24.dp),
+                .padding(10.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             AsyncImage(
@@ -76,7 +76,7 @@ fun MerchantItem(
                 Text(
                     text = merchant.displayDistance,
                     style = MaterialTheme.typography.bodySmall.copy(
-                        fontSize = adjustedFontSize(10f),
+                        fontSize = adjustedFontSize(8f),
                         fontWeight = FontWeight.W500,
                         color = MaterialTheme.colorScheme.primary.copy(alpha = 0.5f)
                     ),
@@ -89,14 +89,14 @@ fun MerchantItem(
                     Icon(
                         painter = painterResource(R.drawable.icon_star),
                         contentDescription = null,
-                        modifier = Modifier.size(15.dp),
+                        modifier = Modifier.size(10.dp),
                         tint = colorPrimaryLight
                     )
                     WidthSpace(width = 2.dp)
                     Text(
                         text = merchant.rating.toString(),
                         style = MaterialTheme.typography.bodySmall.copy(
-                            fontSize = adjustedFontSize(10f),
+                            fontSize = adjustedFontSize(8f),
                             fontWeight = FontWeight.W500,
                             color = MaterialTheme.colorScheme.primary.copy(alpha = 0.5f)
                         ),
