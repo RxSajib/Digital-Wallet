@@ -76,7 +76,7 @@ fun UserBalanceCard(modifier: Modifier, user: User, topUpClick: () -> Unit, send
                 WidthSpace(width = 8.dp)
                 WalletActionButton(
                     icon = painterResource(R.drawable.ic_send_box),
-                    title = stringResource(R.string.send)
+                    title = " "+stringResource(R.string.send)+" "
                 ) {
                     sendClick.invoke()
                 }

@@ -6,18 +6,13 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.WindowInsets
-import androidx.compose.foundation.layout.WindowInsetsSides
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.offset
-import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.statusBarsPadding
-import androidx.compose.foundation.layout.systemBars
-import androidx.compose.foundation.layout.windowInsetsPadding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.TopAppBar
@@ -31,7 +26,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.layoutId
-import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -54,8 +48,6 @@ fun HomeToolBar(
     onClickReward: () -> Unit,
     onClickNotification: () -> Unit
 ) {
-
-
     val constraintSet = ConstraintSet {
         val surface = createRefFor("surface")
         val balanceCard = createRefFor("balanceCard")
@@ -69,7 +61,6 @@ fun HomeToolBar(
     }
 
     ConstraintLayout(constraintSet = constraintSet) {
-
         TopAppBar(
             modifier = Modifier.layoutId("surface"),
             colors = TopAppBarDefaults.topAppBarColors(containerColor = colorPrimaryLight),
@@ -78,11 +69,12 @@ fun HomeToolBar(
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(140.dp)
-                        .padding(end = 16.dp, bottom = 16.dp, top = 16.dp)
+                        .padding(end = 16.dp, bottom = 16.dp)
                 ) {
-
-
-                    Row(modifier = Modifier.fillMaxWidth()) {
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
                         Text(
                             text = user.userName ?: "",
                             style = MaterialTheme.typography.titleMedium.copy(
@@ -104,22 +96,19 @@ fun HomeToolBar(
                             ),
                             modifier = Modifier
                                 .clip(shape = CircleShape)
-                                .clickable {
-                                    onClickReward.invoke()
-                                }
+                                .clickable { onClickReward.invoke() }
                                 .background(Color.White)
-
-                                .padding(horizontal = 10.dp, vertical = 5.dp)
-
+                                .padding(horizontal = 18.dp, vertical = 9.dp)
                         )
-                        WidthSpace(width = 5.dp)
+
+                        Spacer(modifier = Modifier.width(5.dp))
+
                         Box(
                             modifier = Modifier
-                                .size(28.dp)
+                                .height(34.dp)
+                                .aspectRatio(1f)
                                 .clip(shape = CircleShape)
-                                .clickable {
-                                    onClickNotification.invoke()
-                                }
+                                .clickable { onClickNotification.invoke() }
                                 .background(color = Color.White),
                             contentAlignment = Alignment.Center
                         ) {
@@ -135,42 +124,13 @@ fun HomeToolBar(
             }
         )
 
-
-
         UserBalanceCard(
             modifier = Modifier
-                .padding(16.dp)
+                .padding(top = 16.dp, start = 16.dp, end = 16.dp)
                 .layoutId("balanceCard"),
             user = user,
-            topUpClick = {
-                onTopUpClick.invoke()
-            },
-            sendClick = {
-                onSendClick.invoke()
-            },
+            topUpClick = { onTopUpClick.invoke() },
+            sendClick = { onSendClick.invoke() },
         )
-
-
     }
-}
-
-@Composable
-@Preview
-fun HomeToolBarPreview(modifier: Modifier = Modifier) {
-    HomeToolBar(
-        user = User(
-            userID = 1,
-            userName = "Sajib Roy",
-            balance = 5800.00,
-            coinReward = 4.50,
-            userEmailAddress = "sajibroy206@gmail.com",
-            userPhoneNumber = "+8801771330378",
-            userProfilePicture = "",
-            isVerify = true
-        ),
-        onTopUpClick = {},
-        onSendClick = {},
-        onClickReward = {},
-        onClickNotification = {},
-    )
 }

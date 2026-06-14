@@ -32,11 +32,11 @@ fun BannerItem(context: PlatformContext, banner: Banner, onClickBanner : (Banner
             .fillMaxWidth()
 
             .padding(horizontal = 16.dp)
-            .clip(shape = RoundedCornerShape(size = 12.dp))
+            .clip(shape = RoundedCornerShape(size = 8.dp))
             .clickable{
 onClickBanner.invoke(banner)
             }
-            .aspectRatio(2.5f)
+            .height(97.dp)
     )
 }
 

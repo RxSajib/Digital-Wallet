@@ -19,6 +19,7 @@ import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -33,6 +34,7 @@ import com.lt.compose_views.banner.Banner
 import com.lt.compose_views.banner.rememberBannerState
 import com.zenbyte.studio.digitalwallet.R
 import com.zenbyte.studio.digitalwallet.ui.component.BannerItem
+import com.zenbyte.studio.digitalwallet.ui.component.CustomLoading
 import com.zenbyte.studio.digitalwallet.ui.component.HeightSpace
 import com.zenbyte.studio.digitalwallet.ui.component.MerchantItem
 import com.zenbyte.studio.digitalwallet.ui.component.SectionHeader
@@ -51,6 +53,11 @@ fun HomeScreen() {
     val contentCoil = LocalPlatformContext.current
     val bannerState = rememberBannerState()
 
+
+    if(viewModel.isLoading){
+        CustomLoading()
+    }else {
+
     LazyVerticalGrid(
         columns = GridCells.Fixed(4),
         modifier = Modifier.fillMaxSize(),
@@ -61,7 +68,7 @@ fun HomeScreen() {
 
 
         item(span = { GridItemSpan(maxLineSpan) }) {
-            HeightSpace(height = 6.dp)
+            //  HeightSpace(height = 6.dp)
         }
 
         items(
@@ -86,12 +93,12 @@ fun HomeScreen() {
             span = { GridItemSpan(maxLineSpan) }
         ) {
             Column {
-                HeightSpace(height = 10.dp)
+                HeightSpace(height = 5.dp)
                 SectionHeader(
                     title = stringResource(R.string.today_promotion),
                     modifier = Modifier.padding(horizontal = 16.dp)
                 ) {}
-                HeightSpace(height = 10.dp)
+                HeightSpace(height = 5.dp)
             }
         }
 
@@ -123,14 +130,14 @@ fun HomeScreen() {
             span = { GridItemSpan(maxLineSpan) }
         ) {
             Column {
-                HeightSpace(height = 10.dp)
+                HeightSpace(height = 5.dp)
                 SectionHeader(
                     title = stringResource(R.string.nearby_merchant),
                     modifier = Modifier.padding(horizontal = 16.dp)
                 ) {
                     // handle click event for view all button
                 }
-                HeightSpace(height = 10.dp)
+                HeightSpace(height = 5.dp)
             }
         }
 
@@ -141,7 +148,7 @@ fun HomeScreen() {
             LazyRow(
                 contentPadding = PaddingValues(horizontal = 16.dp),
                 modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(10.dp)
+                horizontalArrangement = Arrangement.spacedBy(16.dp)
             ) {
                 items(
                     items = merchantList.value,
@@ -154,6 +161,7 @@ fun HomeScreen() {
                 }
             }
         }
+    }
     }
 }
 

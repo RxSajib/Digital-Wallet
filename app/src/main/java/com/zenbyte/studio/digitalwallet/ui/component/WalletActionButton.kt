@@ -44,7 +44,7 @@ fun WalletActionButton(icon: Painter, title: String, onClick: (String) -> Unit) 
     ) {
         Icon(
             painter = icon,
-            modifier = Modifier.size(18.dp),
+            modifier = Modifier.size(24.dp),
             contentDescription = null
         )
         HeightSpace(height = 5.dp)
